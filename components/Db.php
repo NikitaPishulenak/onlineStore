@@ -5,7 +5,6 @@ class Db
 
 		public static function getConnection()
 		{
-			echo "lkn";
 			$paramsPath = ROOT . '/config/db_params.php';
 			$params = include($paramsPath);
 

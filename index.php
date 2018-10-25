@@ -13,7 +13,6 @@ define('ROOT', dirname(__FILE__));
 require_once(ROOT.'/components/Router.php');
 require_once(ROOT.'/components/Db.php');
 
-
 // 3. Установка соединения с БД
 
 
