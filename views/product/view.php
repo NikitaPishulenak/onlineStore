@@ -3,7 +3,7 @@
 <section>
     <div class="container">
         <div class="row">
-                        <div class="col-sm-3">
+                        <!-- <div class="col-sm-3">
                 <div class="left-sidebar">
                     <h2>Каталог</h2>
                     <div class="panel-group category-products">
@@ -20,19 +20,22 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-sm-9 padding-right">
+            <div class="col-sm-12 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-3"><!-- 5 -->
                             <div class="view-product">
-                                <img src="/template/images/product-details/1.jpg" alt="" />
+                                <img src="/phpShop/template/images/product-details/1.jpg" alt="" />
                             </div>
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-9">
                             <div class="product-information"><!--/product-information-->
-                                <img src="/template/images/product-details/new.jpg" class="newarrival" alt="" />
+                                <?php if ($product['is_new']): ?>
+                                <img src="/phpShop/template/images/product-details/new.jpg" class="newarrival" alt="" />
+                                <?php endif; ?>
+                                
                                 <h2><?php echo $product['name'];?></h2>
                                 <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>

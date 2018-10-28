@@ -1,21 +1,21 @@
 <?php
 
-
-include_once ROOT . '/models/Category.php';
-include_once ROOT . '/models/Product.php';
-
 class SiteController
 {
-	public function actionIndex(){
+	public function actionIndex($page=1){
 		$categories = array();
         $categories = Category::getCategoriesList();
 
         $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(6);
+        $latestProducts = Product::getLatestProducts(6, $page);
+
+        $total = Product::getTotalProductsInCatalog();
+
+        // Создаем объект Pagination - постраничная навигация
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
         $recomendedProducts = array();
         $recomendedProducts=Product::getRecommendedProducts();
-         //print_r($recomendedProducts);
 
 		require_once(ROOT . '/views/site/index.php');
 		return true;

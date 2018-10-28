@@ -3,14 +3,14 @@
 class ProductController
 {
 	public function actionView($id){
-		echo "<br>".$id;
-		// $categories = array();
-  //       $categories = Category::getCategoriesList();
+		$product = array();
+		$product = Product::getProductById($id);
+		//print_r($product);
 
   //       $latestProducts = array();
   //       $latestProducts = Product::getLatestProducts(6);
 
-		// require_once(ROOT . '/views/site/index.php');
+		require_once(ROOT . '/views/product/view.php');
 		return true;
 	}
 

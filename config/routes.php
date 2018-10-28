@@ -1,13 +1,12 @@
 <?php
 
 return array(
-	'phpShop/product/([\d]+)' => 'product/view/$1', // actionView в ProductController
-	
+	'phpShop/product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
 	'phpShop/catalog' => 'catalog/index',
+	'phpShop/category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
 	'phpShop/category/([0-9]+)' => 'catalog/category/$1',
-    
- //    'catalog' => 'catalog/index', // actionIndex в CatalogController
- //    'category/([0-9]+)' => 'catalog/category/$1',  // actionCategory в CatalogController
+	'phpShop/page-([0-9]+)' => 'site/index/$1',
+	'phpShop/register' => 'user/register', //регистрация пользователя
 
     'phpShop' => 'site/index', // actionIndex в SiteController
 

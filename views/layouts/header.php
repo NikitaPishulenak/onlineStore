@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="index.html"><img src="template/images/home/logo.png" alt="" /></a>
+                                <a href="/phpShop"><img src="/phpShop/template/images/home/logo.png" alt="LOGO" /></a>
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -62,7 +62,7 @@
                                 <ul class="nav navbar-nav">                                    
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
                                     <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <li><a href="/phpShop/register"><i class="fa fa-lock"></i> Вход</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,16 +84,16 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="/">Главная</a></li>
+                                    <li><a href="/phpShop">Главная</a></li>
                                     <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="/catalog/">Каталог товаров</a></li>
-                                            <li><a href="/cart/">Корзина</a></li> 
+                                            <li><a href="/phpShop/catalog/">Каталог товаров</a></li>
+                                            <li><a href="/phpShop/cart/">Корзина</a></li> 
                                         </ul>
                                     </li> 
-                                    <li><a href="/blog/">Блог</a></li> 
-                                    <li><a href="/about/">О магазине</a></li>
-                                    <li><a href="/contacts/">Контакты</a></li>
+                                    <li><a href="/phpShop/blog/">Блог</a></li> 
+                                    <li><a href="/phpShop/about/">О магазине</a></li>
+                                    <li><a href="/phpShop/contacts/">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>

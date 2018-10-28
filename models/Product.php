@@ -10,18 +10,18 @@ class Product
      */
     public static function getLatestProducts($count = self::SHOW_BY_DEFAULT, $page = 1)
     {
-        $count = intval($count);
-        $page = intval($page);
-        $offset = $page * $count;
+        $page = intval($page);   
+        $countList=self::SHOW_BY_DEFAULT;         
+        $offset = ($page-1) * $countList;
+        
         
         $db = Db::getConnection();
         $productsList = array();
 
-        $result = $db->query('SELECT id, name, price, is_new FROM product '
-                . 'WHERE status = "1"'
-                . 'ORDER BY id DESC '                
-                . 'LIMIT ' . $count
-                . ' OFFSET '. $offset);
+        $result = $db->query("SELECT id, name, price, is_new FROM product "
+                . "WHERE status = '1'"
+                . "ORDER BY id DESC "                
+                . "LIMIT $offset, $countList");
 
         $i = 0;
         while ($row = $result->fetch()) {
@@ -39,20 +39,19 @@ class Product
     /**
      * Returns an array of products
      */
-    public static function getProductsListByCategory($categoryId = false, $page = 1)
+    public static function getProductsListByCategory($categoryId, $page)
     {
         if ($categoryId) {
             
-            $page = intval($page);            
-            $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+            $page = intval($page);   
+            $countList=self::SHOW_BY_DEFAULT;         
+            $offset = ($page-1) * $countList;
         
             $db = Db::getConnection();            
             $products = array();
             $result = $db->query("SELECT id, name, price, is_new FROM product "
                     . "WHERE status = '1' AND category_id = '$categoryId' "
-                    . "ORDER BY id ASC "                
-                    . "LIMIT ".self::SHOW_BY_DEFAULT
-                    . ' OFFSET '. $offset);
+                    . "ORDER BY id ASC LIMIT $offset, $countList");
 
             $i = 0;
             while ($row = $result->fetch()) {
@@ -66,6 +65,27 @@ class Product
 
             return $products;       
         }
+    }
+    public static function getCatalogProducts()
+    {
+        $db = Db::getConnection();
+        $productsList = array();
+
+        $result = $db->query('SELECT id, name, price, is_new FROM product '
+                . 'WHERE status = "1"'
+                . 'ORDER BY id DESC ');
+
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            // $productsList[$i]['image'] = $row['image'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['is_new'] = $row['is_new'];
+            $i++;
+        }
+
+        return $productsList;
     }
     
     
@@ -96,6 +116,18 @@ class Product
 
         $result = $db->query('SELECT count(id) AS count FROM product '
                 . 'WHERE status="1" AND category_id ="'.$categoryId.'"');
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
+
+        return $row['count'];
+    }
+
+    public static function getTotalProductsInCatalog()
+    {
+        $db = Db::getConnection();
+
+        $result = $db->query('SELECT count(id) AS count FROM product '
+                . 'WHERE status="1"');
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
 

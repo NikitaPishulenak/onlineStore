@@ -11,7 +11,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a href="/category/<?php echo $categoryItem['id']; ?>"
+                                        <a href="/phpShop/category/<?php echo $categoryItem['id']; ?>"
                                            class="<?php if ($categoryId == $categoryItem['id']) echo 'active'; ?>"
                                            >                                                                                    
                                                <?php echo $categoryItem['name']; ?>
@@ -26,17 +26,17 @@
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Последние товары</h2>
+                    <h2 class="title text-center">Категория</h2>
 
                     <?php foreach ($categoryProducts as $product): ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/template/images/home/product1.jpg" alt="" />
+                                        <img src="/phpShop/template/images/home/product1.jpg" alt="" />
                                         <h2><?php echo $product['price']; ?>$</h2>
                                         <p>
-                                            <a href="/product/<?php echo $product['id']; ?>">
+                                            <a href="/phpShop/product/<?php echo $product['id']; ?>">
                                                 ID:<?php echo $product['id']; ?>, <?php echo $product['name']; ?>
                                             </a>
                                         </p>
@@ -50,11 +50,9 @@
                         </div>
                     <?php endforeach; ?>                              
 
-                    <!-- Постраничная навигация -->
-                    <?php echo $pagination->get(); ?>
-
-
                 </div><!--features_items-->
+            <!-- Постраничная навигация -->
+            <?php echo $pagination->get(); ?>
 
             </div>
         </div>
