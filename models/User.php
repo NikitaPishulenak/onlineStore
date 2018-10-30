@@ -17,6 +17,15 @@ class User
         return $result->execute();
     }
     
+
+    public static function checkFieldEmpty($field) {
+        if (!empty($field)) {
+            return true;
+        }
+        return false;
+    }
+
+
     /**
      * Проверяет имя: не меньше, чем 2 символа
      */

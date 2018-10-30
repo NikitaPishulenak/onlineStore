@@ -29,10 +29,27 @@ class SiteController
 
         if (isset($_POST['submit'])) {
             $name=$_POST['name'];
-            $phon=$_POST['phone'];
+            $phon=$_POST['phonNumber'];
             $message=$_POST['userText'];
 
             $errors = false;
+
+            if (!User::checkFieldEmpty($name)) {
+                $errors[] = 'Введите ваше имя!';
+            }
+            if (!User::checkName($name)) {
+                $errors[] = 'Имя не может быть меньше 2 символов!';
+            }
+            if (!User::checkFieldEmpty($phon)) {
+                $errors[] = 'Введите ваш номер телефона!';
+            }
+            if (!User::checkFieldEmpty($message)) {
+                $errors[] = 'Введите ваш вопрос!';
+            }
+            if($errors==false){
+                ECHO"JH";
+            }
+            
 
         }
 

@@ -12,7 +12,7 @@
                     <?php if (isset($errors) && is_array($errors)): ?>
                         <ul>
                             <?php foreach ($errors as $error): ?>
-                                <li> - <?php echo $error; ?></li>
+                                <li class="error"> - <?php echo $error; ?></li>
                             <?php endforeach; ?>
                         </ul>
                     <?php endif; ?>
@@ -26,7 +26,7 @@
                                 <input type="text" name="name" placeholder="Ваше имя" value="<?php echo $name; ?>"/>
                             </p>
                             <p>
-                                <input type="phone" name="phone" placeholder="Номер телефона" value="<?php echo $phon; ?>"/>
+                                <input type="text" name="phonNumber" class="phonNumber" placeholder="Номер телефона" value="<?php echo $phon; ?>"/>
                             </p>
                             <p>
                                 <textarea type="text" name="userText" placeholder="Сообщение" rows="5"><?php echo $message; ?></textarea>
