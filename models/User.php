@@ -155,12 +155,6 @@ class User
         $result->bindParam(':pwd', $password, PDO::PARAM_STR);
         return $result->execute();
 
-        // $user = $result->fetch();
-        // if ($user) {
-        //     return $user['id'];
-        // }
-
-        // return false;
     }
     
 }

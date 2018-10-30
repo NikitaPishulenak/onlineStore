@@ -19,6 +19,25 @@ class SiteController
 
 		require_once(ROOT . '/views/site/index.php');
 		return true;
+    }
+    
+    public function actionContact(){
+        $name='';
+        $phon='';
+        $message='';
+        $result = false;
+
+        if (isset($_POST['submit'])) {
+            $name=$_POST['name'];
+            $phon=$_POST['phone'];
+            $message=$_POST['userText'];
+
+            $errors = false;
+
+        }
+
+		require_once(ROOT . '/views/site/contact.php');
+		return true;
 	}
 
 }
