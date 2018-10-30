@@ -6,15 +6,16 @@
 
             <div class="col-sm-4 col-sm-offset-4 padding-right">
                 
-                <?php if ($result): ?>
-                    <p>Вы зарегистрированы!</p>
-                <?php else: ?>
+                    <?php if ($result): ?>
+                        <p>Вы успешно зарегистрированы!</p>
+                        <a href="/phpShop/login">Авторизоваться</a>
+                    <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)): ?>
                         <ul>
                             <?php foreach ($errors as $error): ?>
-                                <li> - <?php echo $error; ?></li>
+                                <li class="error"> - <?php echo $error; ?></li>
                             <?php endforeach; ?>
-                        </ul>
+                        </ul> 
                     <?php endif; ?>
 
                     <div class="signup-form"><!--sign up form-->

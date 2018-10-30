@@ -9,6 +9,17 @@
 /*scroll to top*/
 
 $(document).ready(function(){
+	if($("div.left-sidebar").is(':visible')){
+		var leftMenuTop=$("div.left-sidebar").offset().top;
+		$(document).scroll(function() {
+			if(window.pageYOffset>=leftMenuTop){
+				$("div.left-sidebar").css('position', 'fixed').css('top', '50px');
+			}else{
+				$("div.left-sidebar").css('position', 'inherit').css('top', 'inherit');
+			}
+		});
+	}
+	
 	$(function () {
 		$.scrollUp({
 	        scrollName: 'scrollUp', // Element ID
@@ -27,4 +38,5 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+
 });

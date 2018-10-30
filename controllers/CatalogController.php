@@ -5,13 +5,9 @@ class CatalogController
 	public function actionIndex(){
         $categories = array();
         $categories = Category::getCategoriesList();
-        // echo "<br>";
-        // print_r($categories);
 
         $CatalogProducts = array();
         $CatalogProducts = Product::getCatalogProducts();
-        // echo "<br>";
-        // print_r($CatalogProducts);
 
 
 		require_once(ROOT . '/views/catalog/catalog.php');

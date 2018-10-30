@@ -1,8 +1,6 @@
 ﻿<?php
-
 class Router
 {
-
     private $routes;
 
 
@@ -26,7 +24,8 @@ class Router
     {
         // Получить строку запроса
         $uri = $this->getURI();
-         echo ($uri);
+        
+         //echo ($uri);
 
         // Проверить наличие такого запроса в routes.php
         foreach ($this->routes as $uriPattern => $path) {
@@ -52,9 +51,9 @@ class Router
                 $controllerFile = ROOT . '/controllers/' .
                         $controllerName . '.php';
 
-                echo "<br>Где : ".$controllerName;
-                echo "<br>Что: ".$actionName;
-                echo "<br>параметры: ".$parameters;
+                // echo "<br>Где : ".$controllerName;
+                // echo "<br>Что: ".$actionName;
+                // echo "<br>параметры: ".$parameters;
 
                 if (file_exists($controllerFile)) {
                     include_once($controllerFile);
