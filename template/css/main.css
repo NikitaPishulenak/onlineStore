@@ -2618,14 +2618,16 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
-#bxr-basket-row input[type=button].bxr-quantity-button-plus, #bxr-basket-row input[type=button].bxr-quantity-button-minus, input.bxr-quantity-button-plus, input.bxr-quantity-button-minus {
+#bxr-basket-row input[type=button].bxr-quantity-button-plus, #bxr-basket-row a.bxr-quantity-button-minus, a.bxr-quantity-button-plus, a.bxr-quantity-button-minus {
   padding: 4px 3px;
   border: 1px solid #e0e0e0;
   background: #FFF;
   display: block;
   float: left;
   width: 20px;
+  text-decoration: none;
 }
+
 .bxr-quantity-text, .bxr-quantity-button-minus, .bxr-quantity-button-plus, .icon-button-cart, .bxr-quantity-button-delay, .icon-button-delay, .icon-button-delete, .compare-button-delete {
   font-size: 14px;
   line-height: 24px;
@@ -2634,7 +2636,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   width: 30px;
   text-align: center;
 }
-input[type=number].bxr-quantity-text {
+span.bxr-quantity-text {
   border-top: 1px solid #E0E0E0;
   border-bottom: 1px solid #E0E0E0;
   padding: 4px 5px;
@@ -2648,7 +2650,7 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-input[type=text].bxr-quantity-text, input[type=number].bxr-quantity-text {
+span.bxr-quantity-text {
   background: #f7f7f9;
   display: block;
   float: left;

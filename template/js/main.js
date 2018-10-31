@@ -24,10 +24,27 @@ $(document).ready(function(){
 
 	$('.add-to-cart').click(function(){
 		var id=$(this).attr('data-id');
-		$.post("/phpShop/cart/addAjax/"+id, {}, function (data) {
-			$("#cart-count").html(data);
-			console.log(data);
-		});
+		addInCart(id);
+		return false;
+	});
+
+	$('.bxr-quantity-button-plus').click(function(){
+		var id=$(this).parent().parent().attr('data-id');
+		addInCart(id);
+		var cur_result=$(this).parent().find('.bxr-quantity-text').text();
+		$(this).parent().find('.bxr-quantity-text').html(++cur_result);
+		return false;
+	});
+
+	$('.bxr-quantity-button-minus').click(function(){
+		var id=$(this).parent().parent().attr('data-id');
+		
+		var cur_result=$(this).parent().find('.bxr-quantity-text').text();
+		if(cur_result>1){
+			reduceFromCart(id);
+			$(this).parent().find('.bxr-quantity-text').html(--cur_result);
+		}
+		
 		return false;
 	});
 	
@@ -49,5 +66,19 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+
+	function addInCart(id){
+		$.post("/phpShop/cart/addAjax/"+id, {}, function (data) {
+			$("#cart-count").html(data);
+			return;
+		});
+	}
+
+	function reduceFromCart(id){
+		$.post("/phpShop/cart/reduceAjax/"+id, {}, function (data) {
+			$("#cart-count").html(data);
+			return;
+		});
+	}
 
 });

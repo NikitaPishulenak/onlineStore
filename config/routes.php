@@ -13,6 +13,7 @@ return array(
 	'phpShop/cabinet/editPassword' => 'cabinet/editPassword',
 	'phpShop/cabinet' => 'cabinet/index',
 	'phpShop/cart/addAjax/([0-9]+)' => 'cart/addProduct/$1',
+	'phpShop/cart/reduceAjax/([0-9]+)' => 'cart/reduceProduct/$1',
 	'phpShop/cart' => 'cart/index',
 	
 	

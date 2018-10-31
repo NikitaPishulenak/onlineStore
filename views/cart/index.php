@@ -47,13 +47,9 @@
                                     <button class="remove-btn" title="Удалить">Удалить</button>
                                 </div>
                                 <div class="count">
-                                    <form method="post" class="ms2_form form-inline bxr-basket-group" role="form">
-                                        <input type="hidden" name="key" value="cb0a53e0bef0cd9241eff8da6667323d" />
-                                        <input type="button" class="bxr-quantity-button-minus" value="-">
-                                        <input type="number" name="count" value="<?php echo $productsInCart[$product['id']];?>" class="bxr-quantity-text">
-                                        <input type="button" class="bxr-quantity-button-plus" value="+">
-                                        <button class="btn btn-default" style="display: none;" type="submit hidden" name="ms2_action" value="cart/change"><i class="glyphicon glyphicon-refresh"></i></button>
-                                    </form>
+                                    <a href="#" class="bxr-quantity-button-minus">-</a>
+                                    <span class="bxr-quantity-text"><?php echo $productsInCart[$product['id']];?></span>
+                                    <a href="/phpShop/cart/addAjax/<?php echo $product['id'];?>" class="bxr-quantity-button-plus">+</a>
                                 </div>
                                 <div class="price"><span><?php echo $product['price'];?></span> руб.</div>
 

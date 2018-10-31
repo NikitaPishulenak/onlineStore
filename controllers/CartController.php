@@ -15,7 +15,7 @@ class CartController
         if(isset($productsInCart)){
             $productIds=array_keys($productsInCart);
             $products=Cart::getProductsByIds($productIds);
-            
+            print_r($productsInCart);
         }
         $totalPrice=Cart::getTotalPrice();
         require_once(ROOT . '/views/cart/index.php');
@@ -24,7 +24,11 @@ class CartController
 
 	public function actionAddProduct($idProduct){
         echo Cart::addProduct($idProduct);
-         
+		return true;
+    }
+
+    public function actionReduceProduct($idProduct){
+        echo Cart::reduceProduct($idProduct);
 		return true;
     }
 
