@@ -60,7 +60,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">                                    
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                                    <li><a href="/phpShop/cart"><i class="fa fa-shopping-cart"></i> Корзина</a><i id="cart-count"><?php echo Cart::totalProductInCart(); ?></i></li>
                                     
                                     <?php if(!User::isGuest()): ?>
                                         <li><a href="/phpShop/cabinet"><i class="fa fa-user"></i> Аккаунт</a></li>

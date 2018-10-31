@@ -2535,3 +2535,135 @@ h2.title {
   color: #CE3C2D;
 }
 
+#cart-count{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 5px;
+  right: 5px;
+  background: #595e5e;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  border-radius: 100%;
+}
+
+#msCart .table {
+  border: 1px solid rgb(223, 10, 10);
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+#msCart .header, #msCart .footer {
+  display: table-row;
+  background-color: rgb(241, 210, 169);
+  color: #fff;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+#msCart .header div, #msCart .productRow div, #msCart .footer div {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+
+/* 
+#msCart .price {
+  text-align: center;
+} */
+
+#msCart .productRow:nth-child(even) {
+  background: #e9e9e9;
+}
+#msCart .productRow {
+  display: table-row;
+}
+
+#msCart .image {
+  width: 90px;
+}
+
+#msCart .image img {
+  max-width: 80px;
+  /* padding: 5px 10px; */
+}
+
+#msCart .remove-btn {
+  border: 0;
+  background: none;
+  padding: 0;
+  line-height: normal;
+  font-size: 12px;
+  border-bottom: 1px dashed #FF0000;
+  color: #FF0000;
+}
+
+#msCart div.price {
+  font-size: 16px;
+}
+
+#msCart form {
+  margin: 0;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+#bxr-basket-row input[type=button].bxr-quantity-button-plus, #bxr-basket-row input[type=button].bxr-quantity-button-minus, input.bxr-quantity-button-plus, input.bxr-quantity-button-minus {
+  padding: 4px 3px;
+  border: 1px solid #e0e0e0;
+  background: #FFF;
+  display: block;
+  float: left;
+  width: 20px;
+}
+.bxr-quantity-text, .bxr-quantity-button-minus, .bxr-quantity-button-plus, .icon-button-cart, .bxr-quantity-button-delay, .icon-button-delay, .icon-button-delete, .compare-button-delete {
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
+}
+input[type=number].bxr-quantity-text {
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 4px 5px;
+  
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type=text].bxr-quantity-text, input[type=number].bxr-quantity-text {
+  background: #f7f7f9;
+  display: block;
+  float: left;
+  border-left: 0px;
+  border-right: 0px;
+  box-shadow: none;
+  border-radius: 0;
+}
+.bxr-quantity-text, .bxr-quantity-button-minus, .bxr-quantity-button-plus, .icon-button-cart, .bxr-quantity-button-delay, .icon-button-delay, .icon-button-delete, .compare-button-delete {
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+#msCart .productRow div.title{
+  text-align: left;
+}

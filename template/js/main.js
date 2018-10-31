@@ -21,6 +21,15 @@ $(document).ready(function(){
 	}
 
 	$(".phonNumber").mask('+375-(99)-999-99-99');
+
+	$('.add-to-cart').click(function(){
+		var id=$(this).attr('data-id');
+		$.post("/phpShop/cart/addAjax/"+id, {}, function (data) {
+			$("#cart-count").html(data);
+			console.log(data);
+		});
+		return false;
+	});
 	
 	$(function () {
 		$.scrollUp({

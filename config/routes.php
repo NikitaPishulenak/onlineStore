@@ -12,6 +12,9 @@ return array(
 	'phpShop/register' => 'user/register', //регистрация пользователя
 	'phpShop/cabinet/editPassword' => 'cabinet/editPassword',
 	'phpShop/cabinet' => 'cabinet/index',
+	'phpShop/cart/addAjax/([0-9]+)' => 'cart/addProduct/$1',
+	'phpShop/cart' => 'cart/index',
+	
 	
 
 	'phpShop' => 'site/index', // actionIndex в SiteController
