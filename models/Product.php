@@ -134,54 +134,7 @@ class Product
         return $row['count'];
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /**
-     * Returns an array of recommended products
-     */
+      
     public static function getRecommendedProducts()
     {
         $db = Db::getConnection();

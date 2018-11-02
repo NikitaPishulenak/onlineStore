@@ -37,6 +37,13 @@ class Cart
         return self::totalProductInCart();
     }
 
+    public static function deleteProduct($id)
+    {
+        $productInCart=self::getCart();
+        unset($productInCart[$id]);
+        $_SESSION['product']=$productInCart;
+    }
+
     public static function totalProductInCart()
     {
         $count=0;
@@ -56,6 +63,7 @@ class Cart
             return $_SESSION['product'];
         }
         return false;
+       
     }
 
     public static function getProductsByIds($productIds)
@@ -75,9 +83,27 @@ class Cart
          return $products;
     }
 
+    public static function getProductCostById($id)
+    {
+        $db = Db::getConnection();
+        
+        $result = $db->query("SELECT price FROM product WHERE status='1' and id=".$id);
+
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            return $row['price'];
+         }
+    }
+
     public static function getTotalPrice()
     {
-        
+        $total=0;
+        $productInCart=self::getCart();
+        if(isset($productInCart)){
+            foreach($productInCart as $id => $count){
+                $total+=$count*self::getProductCostById($id);
+            }
+        }
+        return $total;
     }
     
 }

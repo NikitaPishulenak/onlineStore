@@ -27,12 +27,19 @@ $(document).ready(function(){
 		addInCart(id);
 		return false;
 	});
+	
+	// $('.remove-btn').click(function(){
+	// 	var id=$(this).parent().parent().attr('data-id');
+	// 	console.log(id);
+	// 	//return false;
+	// });
 
 	$('.bxr-quantity-button-plus').click(function(){
 		var id=$(this).parent().parent().attr('data-id');
 		addInCart(id);
 		var cur_result=$(this).parent().find('.bxr-quantity-text').text();
 		$(this).parent().find('.bxr-quantity-text').html(++cur_result);
+		countProductInCart();
 		return false;
 	});
 
@@ -43,6 +50,7 @@ $(document).ready(function(){
 		if(cur_result>1){
 			reduceFromCart(id);
 			$(this).parent().find('.bxr-quantity-text').html(--cur_result);
+			countProductInCart();
 		}
 		
 		return false;
@@ -79,6 +87,17 @@ $(document).ready(function(){
 			$("#cart-count").html(data);
 			return;
 		});
+	}
+
+	function countProductInCart(){
+		var total=0;
+		var count=0;
+		$('.bxr-quantity-text').each(function(){
+			count+=Number($(this).text());
+			total+=Number($(this).text())*Number($(this).parent().parent().find('.price').text().replace(/руб./g,'').trim());
+		});
+		$('div.total_count').html(count+" шт.");
+		$('div.total_cost').html(total+" руб.");
 	}
 
 });

@@ -28,7 +28,7 @@
                     
                     <?php if ($productsInCart): ?>
                     <div id="msCart">
-                        <table class="table-bordered table">
+                        <div class="table-bordered table">
                             <div class="header">
                                 <div class="image">Фото</div>
                                 <div class="code">Код<br>товара &nbsp;</div>
@@ -44,7 +44,8 @@
                                 <div class="code"><span><?php echo $product['code'];?></span></div>
                                 <div class="title">
                                     <a href="/phpShop/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a><br/>
-                                    <button class="remove-btn" title="Удалить">Удалить</button>
+                                    <a class="remove-btn" title="Удалить" href="/phpShop/cart/delete/<?php echo $product['id'];?>">Удалить</a>
+                                    <!-- <a href="#" >Удалить</a> -->
                                 </div>
                                 <div class="count">
                                     <a href="#" class="bxr-quantity-button-minus">-</a>
@@ -59,39 +60,14 @@
                                 <div class="image">&nbsp;</div>
                                 <div class="code">&nbsp;</div>
                                 <div class="total">Итого:</div>
-                                <div class="total_count"><span class="ms2_total_count"><?php echo $totalCauntProductInCart;?></span> шт.</div>
-                                <div class="total_cost"><span class="ms2_total_cost">224.1</span> руб. </div>
+                                <div class="total_count"><span><?php echo $totalCauntProductInCart;?></span> шт.</div>
+                                <div class="total_cost"><span><?php echo $totalPrice;?></span> руб. </div>
                             </div>
 
                             
-                        </table>
+                        </div>
                     </div>      
 
-                    <table class="table-bordered table-striped table">    
-                            <tr>
-                                <th>Код товара</th>
-                                <th>Название</th>
-                                <th>Стомость, BYN</th>
-                                <th>Количество, шт</th>
-                            </tr>
-                            <?php foreach ($products as $product): ?>
-                                <tr>
-                                    <td><?php echo $product['code'];?></td>
-                                    <td>
-                                        <a href="/product/<?php echo $product['id'];?>">
-                                            <?php echo $product['name'];?>
-                                        </a>
-                                    </td>
-                                    <td><?php echo $product['price'];?></td>
-                                    <td><?php echo $productsInCart[$product['id']];?></td>                        
-                                </tr>
-                            <?php endforeach; ?>
-                                <tr>
-                                    <td colspan="3">Общая стоимость:</td>
-                                    <td><?php echo $totalPrice;?></td>
-                                </tr>
-                            
-                        </table>
                     <?php else: ?>
                         <p>Корзина пуста</p>
                     <?php endif; ?>

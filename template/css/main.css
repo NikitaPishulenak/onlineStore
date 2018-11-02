@@ -1,8 +1,4 @@
-﻿
-/*************************
-*******Typography******
-**************************/
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100&subset=latin,cyrillic-ext,cyrillic);
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100&subset=latin,cyrillic-ext,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
@@ -1051,6 +1047,7 @@ h2.title {
 
 .recommended_items {
   overflow: hidden;
+  position: relative;
 }
 
 #recommended-item-carousel .carousel-inner .item {
@@ -1059,7 +1056,7 @@ h2.title {
 
 .recommended-item-control {
   position: absolute;
-  top: 41%;
+  top: 33%;
 }
 
 .recommended-item-control i {
@@ -1567,7 +1564,7 @@ h2.title {
 }
 
 .breadcrumbs .breadcrumb > li + li:before {
-  content: " ";
+  content: " ";
 }
 
 #cart_items .cart_info {

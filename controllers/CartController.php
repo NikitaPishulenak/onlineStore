@@ -12,12 +12,13 @@ class CartController
         $productsInCart=Cart::getCart();
         $totalCauntProductInCart=Cart::totalProductInCart();
 
-        if(isset($productsInCart)){
+        if(!empty($productsInCart)){
             $productIds=array_keys($productsInCart);
             $products=Cart::getProductsByIds($productIds);
-            print_r($productsInCart);
+            //print_r($productsInCart);
+            $totalPrice=Cart::getTotalPrice();
         }
-        $totalPrice=Cart::getTotalPrice();
+        
         require_once(ROOT . '/views/cart/index.php');
         return true;
     }
@@ -30,6 +31,10 @@ class CartController
     public function actionReduceProduct($idProduct){
         echo Cart::reduceProduct($idProduct);
 		return true;
+    }
+
+    public function actionDeleteProduct($idProduct){
+        Cart::deleteProduct($idProduct);
     }
 
 }
