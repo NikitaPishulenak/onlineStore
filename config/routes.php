@@ -17,6 +17,7 @@ return array(
 	'phpShop/cart/reduceAjax/([0-9]+)' => 'cart/reduceProduct/$1',//- в корзине
 	
 	'phpShop/cart' => 'cart/index',
+	'phpShop/admin' => 'admin/index',
 	
 	
 
