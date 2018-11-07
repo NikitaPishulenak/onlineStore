@@ -6,7 +6,7 @@
             
             <br/>
             
-            <h4>Добрый день, администратор!</h4>
+            <h4>Добрый день, администратор <?php echo $_SESSION['name']; ?>!</h4>
             
             <br/>
             
@@ -15,9 +15,9 @@
             <br/>
             
             <ul>
-                <li><a href="/admin/product">Управление товарами</a></li>
-                <li><a href="/admin/category">Управление категориями</a></li>
-                <li><a href="/admin/order">Управление заказами</a></li>
+                <li><a href="/phpShop/admin/product">Управление товарами</a></li>
+                <li><a href="/phpShop/admin/category">Управление категориями</a></li>
+                <li><a href="/phpShop/admin/order">Управление заказами</a></li>
             </ul>
             
         </div>

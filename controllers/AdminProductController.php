@@ -1,5 +1,5 @@
 <?php
-
+include 'AdminBase.php';
 /**
  * Контроллер AdminProductController
  * Управление товарами в админпанели
@@ -16,7 +16,7 @@ class AdminProductController extends AdminBase
         self::checkAdmin();
 
         // Получаем список товаров
-        $productsList = Product::getProductsList();
+        $productsList = Product::getCatalogProducts();
 
         // Подключаем вид
         require_once(ROOT . '/views/admin_product/index.php');
@@ -58,21 +58,20 @@ class AdminProductController extends AdminBase
             }
 
             if ($errors == false) {
-                // Если ошибок нет
-                // Добавляем новый товар
-                $id = Product::createProduct($options);
 
+                $id = Product::createProduct($options);
+ 
                 // Если запись добавлена
-                if ($id) {
+                if ((isset($id)) && ($id!=0)) {
                     // Проверим, загружалось ли через форму изображение
                     if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-                        // Если загружалось, переместим его в нужную папке, дадим новое имя
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/phpShop/upload/images/products/{$id}.jpg");
                     }
                 };
-
-                // Перенаправляем пользователя на страницу управлениями товарами
-                header("Location: /admin/product");
+                ?><script>
+                alert("Товар успешно добавлен!");
+                document.createProduct.reset();
+                </script><?
             }
         }
 
@@ -113,18 +112,18 @@ class AdminProductController extends AdminBase
             // Сохраняем изменения
             if (Product::updateProductById($id, $options)) {
 
-
                 // Если запись сохранена
                 // Проверим, загружалось ли через форму изображение
                 if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-
                     // Если загружалось, переместим его в нужную папке, дадим новое имя
-                   move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                   move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/phpShop/upload/images/products/{$id}.jpg");
                 }
             }
 
-            // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/product");
+            ?><script>
+                alert("Изменения сохранены!");
+                window.location.href = "/phpShop/admin/product";
+            </script><?
         }
 
         // Подключаем вид
@@ -137,21 +136,16 @@ class AdminProductController extends AdminBase
      */
     public function actionDelete($id)
     {
+        echo $id;
         // Проверка доступа
         self::checkAdmin();
-
-        // Обработка формы
-        if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Удаляем товар
-            Product::deleteProductById($id);
-
-            // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/product");
+        if(Product::deleteProductById($id)){
+            $file=$_SERVER['DOCUMENT_ROOT'] . "/phpShop/upload/images/products/{$id}.jpg";
+            if (file_exists($file)) {
+                unlink($file);
+            }
         }
-
-        // Подключаем вид
-        require_once(ROOT . '/views/admin_product/delete.php');
+                
         return true;
     }
 

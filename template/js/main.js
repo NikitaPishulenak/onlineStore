@@ -20,7 +20,7 @@ $(document).ready(function(){
 		});
 	}
 
-	$(".phonNumber").mask('+375-(99)-999-99-99');
+	// $(".phonNumber").mask('+375-(99)-999-99-99');
 
 	$('.add-to-cart').click(function(){
 		var id=$(this).attr('data-id');

@@ -35,14 +35,14 @@
                             <div class="col-sm-6">
                                 <div class="contactinfo">
                                     <h5>
-                                        <a href="/admin"><i class="fa fa-edit"></i> Админпанель</a>
+                                        <a href="/phpShop/admin"><i class="fa fa-edit"></i> Админпанель</a>
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="social-icons pull-right">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="/"><i class="fa fa-sign-out"></i>На сайт</a></li>
+                                        <li><a href="/phpShop/"><i class="fa fa-sign-out"></i>На сайт</a></li>
                                     </ul>
                                 </div>
                             </div>

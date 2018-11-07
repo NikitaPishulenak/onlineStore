@@ -13,7 +13,7 @@ class Category
 
         $categoryList = array();
 
-        $result = $db->query('SELECT id, name FROM category '
+        $result = $db->query('SELECT id, name FROM category WHERE status = "1"'
                 . 'ORDER BY sort_order ASC');
 
         $i = 0;
@@ -23,6 +23,29 @@ class Category
             $i++;
         }
 
+        return $categoryList;
+    }
+
+    /**
+     * Возвращает массив категорий для списка в админпанели <br/>
+     * (при этом в результат попадают и включенные и выключенные категории)
+     * @return array <p>Массив категорий</p>
+     */
+    public static function getCategoriesListAdmin()
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Запрос к БД
+        $result = $db->query('SELECT id, name, sort_order, status FROM category ORDER BY sort_order ASC');
+
+        // Получение и возврат результатов
+        $categoryList = array();
+        $i = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $categoryList[$i] = $row;
+            $i++;
+        }
         return $categoryList;
     }
 
