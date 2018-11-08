@@ -28,11 +28,13 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	// $('.remove-btn').click(function(){
-	// 	var id=$(this).parent().parent().attr('data-id');
-	// 	console.log(id);
-	// 	//return false;
-	// });
+	$('.remove-btn').click(function(){
+		var id=$(this).attr('data-idProduct');
+		$.post("/phpShop/cart/delete/"+id, {}, function () {
+			location.reload();
+		});
+		return false;
+	});
 
 	$('.bxr-quantity-button-plus').click(function(){
 		var id=$(this).parent().parent().attr('data-id');
@@ -54,6 +56,11 @@ $(document).ready(function(){
 		}
 		
 		return false;
+	});
+
+	$('button.completed_order').click(function(){
+		$(this).hide(400);
+		$("#orderForm").show(600);
 	});
 	
 	$(function () {

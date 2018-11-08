@@ -66,6 +66,14 @@ class Cart
        
     }
 
+    public static function Clear()
+    {
+        if(isset($_SESSION['product']))
+        {
+            unset($_SESSION['product']);
+        }     
+    }
+
     public static function getProductsByIds($productIds)
     {
         $products=array();

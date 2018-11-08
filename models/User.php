@@ -35,6 +35,17 @@ class User
         }
         return false;
     }
+
+    /**
+     * Проверяет телефон
+     */
+    public static function checkPhoneNumber($phone) {
+        if (strlen($phone) >= 7) {
+            return true;
+        }
+        
+        return false;
+    }
     
     /**
      * Проверяет имя: не меньше, чем 6 символов

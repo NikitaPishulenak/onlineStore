@@ -28,7 +28,7 @@
                     
                     <?php if ($productsInCart): ?>
                     <div id="msCart">
-                        <table class="table-bordered table">
+                        <div class="table-bordered table">
                             <div class="header">
                                 <div class="image">Фото</div>
                                 <div class="code">Код<br>товара &nbsp;</div>
@@ -39,12 +39,12 @@
                             <?php foreach ($products as $product): ?>
                                 <div class="productRow" data-id="<?php echo $product['id'];?>">
                                 <div class="image">
-            	                    <img src="/phpShop/template/images/home/new.png" alt="Фото" title="<?php echo $product['name'];?>"/>
+                                    <img src="<?php echo Product::getImage($product['id']);?>" alt="Фото" title="<?php echo $product['name'];?>"/>
                                 </div>
                                 <div class="code"><span><?php echo $product['code'];?></span></div>
                                 <div class="title">
                                     <a href="/phpShop/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a><br/>
-                                    <button class="remove-btn" title="Удалить">Удалить</button>
+                                    <button class="remove-btn" title="Удалить" data-idProduct="<?php echo $product['id'];?>">Удалить</button>
                                 </div>
                                 <div class="count">
                                     <a href="#" class="bxr-quantity-button-minus">-</a>
@@ -60,38 +60,43 @@
                                 <div class="code">&nbsp;</div>
                                 <div class="total">Итого:</div>
                                 <div class="total_count"><span class="ms2_total_count"><?php echo $totalCauntProductInCart;?></span> шт.</div>
-                                <div class="total_cost"><span class="ms2_total_cost">224.1</span> руб. </div>
+                                <div class="total_cost"><span class="ms2_total_cost"><?php echo $totalPrice;?></span> руб. </div>
                             </div>
+                        </div>
+                        <button class="completed_order">Оформить заказ</button>
+                    
+                        <div id="orderForm" class="col-sm-11">
+                                <?php if (isset($errors) && is_array($errors)): ?>
+                                    <ul>
+                                        <?php foreach ($errors as $error): ?>
+                                            <li class="error"> - <?php echo $error; ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
 
-                            
-                        </table>
-                    </div>      
+                                <p>Для оформления заказа заполните форму. Наш менеджер свяжется с Вами.</p>
 
-                    <table class="table-bordered table-striped table">    
-                            <tr>
-                                <th>Код товара</th>
-                                <th>Название</th>
-                                <th>Стомость, BYN</th>
-                                <th>Количество, шт</th>
-                            </tr>
-                            <?php foreach ($products as $product): ?>
-                                <tr>
-                                    <td><?php echo $product['code'];?></td>
-                                    <td>
-                                        <a href="/product/<?php echo $product['id'];?>">
-                                            <?php echo $product['name'];?>
-                                        </a>
-                                    </td>
-                                    <td><?php echo $product['price'];?></td>
-                                    <td><?php echo $productsInCart[$product['id']];?></td>                        
-                                </tr>
-                            <?php endforeach; ?>
-                                <tr>
-                                    <td colspan="3">Общая стоимость:</td>
-                                    <td><?php echo $totalPrice;?></td>
-                                </tr>
-                            
-                        </table>
+                                <div class="login-form">
+                                    <form action="#" method="post" name="orderData">
+
+                                        <p>Ваша имя</p>
+                                        <input type="text" name="userName" placeholder="" value="<?php echo $userName; ?>"/>
+
+                                        <p>Номер телефона</p>
+                                        <input type="text" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>"/>
+
+                                        <p>Комментарий к заказу</p>
+                                        <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>"/>
+
+                                        <br/>
+                                        <br/>
+                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить" />
+                                    </form>
+                                </div>
+                        </div>     
+                    </div> 
+
+                    
                     <?php else: ?>
                         <p>Корзина пуста</p>
                     <?php endif; ?>
