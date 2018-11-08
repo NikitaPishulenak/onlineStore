@@ -22,6 +22,13 @@ return array(
     'phpShop/admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'phpShop/admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
     'phpShop/admin/product' => 'adminProduct/index',
+
+	// Управление категориями:    
+    'phpShop/admin/category/create' => 'adminCategory/create',
+    'phpShop/admin/category/update/([0-9]+)' => 'adminCategory/update/$1',
+    'phpShop/admin/category/delete/([0-9]+)' => 'adminCategory/delete/$1',
+	'phpShop/admin/category' => 'adminCategory/index',
+	
 	'phpShop/admin' => 'admin/index',
 	
 	

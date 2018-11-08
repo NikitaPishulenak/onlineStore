@@ -31,7 +31,10 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="template/images/home/product1.jpg" alt="" />
+                                        <div class="img">
+                                            <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
+                                        </div>
+                                        
                                         <h2><?php echo $product['price'];?>$</h2>
                                         <p>
                                             <a href="/phpShop/product/<?php echo $product['id'];?>">
@@ -70,11 +73,12 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <!-- <img src="<?php //echo Product::getImage($sliderItem['id']); ?>" alt="" /> -->
-                                            <img src="/phpShop/template/images/home/product1.jpg" alt="" />
+                                        <div class="imgRec">
+                                            <img src="<?php echo Product::getImage($sliderItem['id']); ?>" alt="" />
+                                        </div>
                                             <h2>$<?php echo $sliderItem['price']; ?></h2>
                                             <a href="/phpShop/product/<?php echo $sliderItem['id']; ?>">
-                                                <?php echo $product['name']; ?>
+                                                <?php echo $sliderItem['name']; ?>
                                             </a>
                                             <br/><br/>
                                             <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $sliderItem['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>

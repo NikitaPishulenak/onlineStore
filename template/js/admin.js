@@ -9,5 +9,16 @@ $(document).ready(function(){
             });
         }
     });
+
+    $("span.delCategory").click(function(){
+        var id=$(this).attr("data-idCategory");
+        var isDel=confirm("Вы действительно хотите удалить категорию #"+id);
+        if(isDel){
+            $.post("/phpShop/admin/category/delete/"+id, {}, function () {
+                location.reload();
+                return;
+            });
+        }
+    });
     
 });

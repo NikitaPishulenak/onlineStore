@@ -71,7 +71,7 @@ class Product
         $db = Db::getConnection();
         $productsList = array();
 
-        $result = $db->query('SELECT id, name, price, is_new, code FROM product '
+        $result = $db->query('SELECT id, name, price, is_new, is_recommended, status, availability, code FROM product '
                 . 'WHERE status = "1"'
                 . 'ORDER BY id DESC ');
 

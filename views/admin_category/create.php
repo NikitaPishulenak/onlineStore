@@ -8,8 +8,8 @@
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление категориями</a></li>
+                    <li><a href="/phpShop/admin">Админпанель</a></li>
+                    <li><a href="/phpShop/admin/category">Управление категориями</a></li>
                     <li class="active">Добавить категорию</li>
                 </ol>
             </div>
@@ -22,14 +22,14 @@
             <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
                     <?php foreach ($errors as $error): ?>
-                        <li> - <?php echo $error; ?></li>
+                        <li class="error"> - <?php echo $error; ?></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
 
             <div class="col-lg-4">
                 <div class="login-form">
-                    <form action="#" method="post">
+                    <form action="#" method="post" name="createCategory">
 
                         <p>Название</p>
                         <input type="text" name="name" placeholder="" value="">

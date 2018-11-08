@@ -1,5 +1,6 @@
 <?php
 
+include 'AdminBase.php';
 /**
  * Контроллер AdminCategoryController
  * Управление категориями товаров в админпанели
@@ -33,13 +34,11 @@ class AdminCategoryController extends AdminBase
 
         // Обработка формы
         if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Получаем данные из формы
+
             $name = $_POST['name'];
             $sortOrder = $_POST['sort_order'];
             $status = $_POST['status'];
 
-            // Флаг ошибок в форме
             $errors = false;
 
             // При необходимости можно валидировать значения нужным образом
@@ -47,14 +46,14 @@ class AdminCategoryController extends AdminBase
                 $errors[] = 'Заполните поля';
             }
 
-
             if ($errors == false) {
-                // Если ошибок нет
-                // Добавляем новую категорию
                 Category::createCategory($name, $sortOrder, $status);
 
                 // Перенаправляем пользователя на страницу управлениями категориями
-                header("Location: /admin/category");
+                ?><script>
+                alert("Категория успешно добавлена!");
+                document.createCategory.reset();
+                </script><?
             }
         }
 
@@ -84,8 +83,10 @@ class AdminCategoryController extends AdminBase
             // Сохраняем изменения
             Category::updateCategoryById($id, $name, $sortOrder, $status);
 
-            // Перенаправляем пользователя на страницу управлениями категориями
-            header("Location: /admin/category");
+            ?><script>
+            alert("Изменения сохранены!");
+            window.location.href = "/phpShop/admin/category";
+        </script><?
         }
 
         // Подключаем вид
@@ -100,19 +101,7 @@ class AdminCategoryController extends AdminBase
     {
         // Проверка доступа
         self::checkAdmin();
-
-        // Обработка формы
-        if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Удаляем категорию
-            Category::deleteCategoryById($id);
-
-            // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/category");
-        }
-
-        // Подключаем вид
-        require_once(ROOT . '/views/admin_category/delete.php');
+        Category::deleteCategoryById($id);
         return true;
     }
 

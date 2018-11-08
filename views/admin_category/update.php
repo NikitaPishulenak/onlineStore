@@ -8,8 +8,8 @@
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/category">Управление категориями</a></li>
+                    <li><a href="/phpShop/admin">Админпанель</a></li>
+                    <li><a href="/phpShop/admin/category">Управление категориями</a></li>
                     <li class="active">Редактировать категорию</li>
                 </ol>
             </div>
