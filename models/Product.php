@@ -96,9 +96,18 @@ class Product
         if ($id) {                        
             $db = Db::getConnection();
             
-            $result = $db->query('SELECT * FROM product WHERE id=' . $id);
+            $sql = 'SELECT * FROM product WHERE id = :id';
+
+            // Используется подготовленный запрос
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $id, PDO::PARAM_INT);
+           // Указываем, что хотим получить данные в виде массива
             $result->setFetchMode(PDO::FETCH_ASSOC);
-            
+
+            // Выполнение коменды
+            $result->execute();
+
+            // Получение и возврат результатов
             return $result->fetch();
         }
     }
@@ -276,6 +285,34 @@ class Product
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
         return $result->execute();
+    }
+
+    /**
+     * Возвращает список товаров с указанными индентификторами
+     * @param array $idsArray <p>Массив с идентификаторами</p>
+     * @return array <p>Массив со списком товаров</p>
+     */
+    public static function getProdustsByIds($idsArray)
+    {
+        // Соединение с БД
+        $db = Db::getConnection();
+
+        // Превращаем массив в строку для формирования условия в запросе
+        $idsString = implode(',', $idsArray);
+
+        // Текст запроса к БД
+        $sql = "SELECT * FROM product WHERE status='1' AND id IN ($idsString)";
+
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $i = 0;
+        $products = array();
+        while ($row = $result->fetch()) {
+            $products[$i]= $row;
+            $i++;
+        }
+        return $products;
     }
 
 }

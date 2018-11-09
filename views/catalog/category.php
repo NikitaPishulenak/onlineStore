@@ -33,11 +33,13 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/phpShop/template/images/home/product1.jpg" alt="" />
+                                        <div class="img">
+                                            <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
+                                        </div>
                                         <h2><?php echo $product['price']; ?>$</h2>
                                         <p>
                                             <a href="/phpShop/product/<?php echo $product['id']; ?>">
-                                                ID:<?php echo $product['id']; ?>, <?php echo $product['name']; ?>
+                                                <?php echo $product['name']; ?>
                                             </a>
                                         </p>
                                         <a href="#" class="btn btn-default add-to-cart" data-id="<?php echo $product['id'];?>"><i class="fa fa-shopping-cart"></i>В корзину</a>

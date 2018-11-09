@@ -139,7 +139,7 @@ class Order
      * @param integer $status <p>Статус <i>(включено "1", выключено "0")</i></p>
      * @return boolean <p>Результат выполнения метода</p>
      */
-    public static function updateOrderById($id, $userName, $userPhone, $userComment, $date, $status)
+    public static function updateOrderById($id, $status)
     {
         // Соединение с БД
         $db = Db::getConnection();
@@ -147,20 +147,12 @@ class Order
         // Текст запроса к БД
         $sql = "UPDATE product_order
             SET 
-                user_name = :user_name, 
-                user_phone = :user_phone, 
-                user_comment = :user_comment, 
-                date = :date, 
                 status = :status 
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
-        $result->bindParam(':user_name', $userName, PDO::PARAM_STR);
-        $result->bindParam(':user_phone', $userPhone, PDO::PARAM_STR);
-        $result->bindParam(':user_comment', $userComment, PDO::PARAM_STR);
-        $result->bindParam(':date', $date, PDO::PARAM_STR);
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }

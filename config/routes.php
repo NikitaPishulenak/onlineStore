@@ -11,6 +11,7 @@ return array(
 	'phpShop/logout' => 'user/logout', //вход пользователя
 	'phpShop/register' => 'user/register', //регистрация пользователя
 	'phpShop/cabinet/editPassword' => 'cabinet/editPassword',
+	'phpShop/cabinet/history' => 'cabinet/showOrder',
 	'phpShop/cabinet' => 'cabinet/index',
 
 	'phpShop/cart/delete/([0-9]+)' => 'cart/deleteProduct/$1',
@@ -28,6 +29,11 @@ return array(
     'phpShop/admin/category/update/([0-9]+)' => 'adminCategory/update/$1',
     'phpShop/admin/category/delete/([0-9]+)' => 'adminCategory/delete/$1',
 	'phpShop/admin/category' => 'adminCategory/index',
+
+	// Управление заказами:    
+	'phpShop/admin/order/update/([0-9]+)' => 'adminOrder/update/$1',
+	'phpShop/admin/order/view/([0-9]+)' => 'adminOrder/view/$1',
+	'phpShop/admin/order' => 'adminOrder/index',
 	
 	'phpShop/admin' => 'admin/index',
 	

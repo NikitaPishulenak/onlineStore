@@ -1,5 +1,6 @@
 <?php
 
+include 'AdminBase.php';
 /**
  * Контроллер AdminOrderController
  * Управление заказами в админпанели
@@ -36,18 +37,16 @@ class AdminOrderController extends AdminBase
 
         // Обработка формы
         if (isset($_POST['submit'])) {
-            // Если форма отправлена   
-            // Получаем данные из формы
-            $userName = $_POST['userName'];
-            $userPhone = $_POST['userPhone'];
-            $userComment = $_POST['userComment'];
-            $date = $_POST['date'];
+
             $status = $_POST['status'];
 
             // Сохраняем изменения
-            Order::updateOrderById($id, $userName, $userPhone, $userComment, $date, $status);
+            Order::updateOrderById($id, $status);
 
             // Перенаправляем пользователя на страницу управлениями заказами
+            ?><script>
+            location.href="/phpShop/admin/order";
+            </script><?
             header("Location: /admin/order/view/$id");
         }
 
@@ -81,27 +80,5 @@ class AdminOrderController extends AdminBase
         return true;
     }
 
-    /**
-     * Action для страницы "Удалить заказ"
-     */
-    public function actionDelete($id)
-    {
-        // Проверка доступа
-        self::checkAdmin();
-
-        // Обработка формы
-        if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Удаляем заказ
-            Order::deleteOrderById($id);
-
-            // Перенаправляем пользователя на страницу управлениями товарами
-            header("Location: /admin/order");
-        }
-
-        // Подключаем вид
-        require_once(ROOT . '/views/admin_order/delete.php');
-        return true;
-    }
-
+    
 }

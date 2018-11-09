@@ -901,11 +901,10 @@ div.img, div.imgRec{
 }
 
 div.img{
-  width: 250px;
   max-height: 250px;
 }
 div.imgRec{
-  width: 180px;
+  /* width: 180px; */
   max-height: 180px;
 }
 
@@ -1624,6 +1623,7 @@ div.imgRec{
 
 #cart_items .cart_info .image {
   padding-left: 30px;
+
 }
 
 
@@ -2567,9 +2567,11 @@ div.imgRec{
   line-height: 16px;
   border-radius: 100%;
 }
+#msCart{
+  position: relative;
+}
 
 #msCart .table {
-  border: 1px solid rgb(223, 10, 10);
   display: table;
   width: 100%;
   max-width: 100%;
@@ -2578,7 +2580,7 @@ div.imgRec{
 
 #msCart .header, #msCart .footer {
   display: table-row;
-  background-color: rgb(241, 210, 169);
+  background-color: #FE980F;
   color: #fff;
   padding: 12px 0;
   font-size: 16px;
@@ -2589,9 +2591,9 @@ div.imgRec{
 #msCart .header div, #msCart .productRow div, #msCart .footer div {
   display: table-cell;
   vertical-align: middle;
-  padding-left: 5px;
-  padding-right: 5px;
-  /* text-align: center; */
+  /* padding-left: 5px;
+  padding-right: 5px; */
+  padding: 5px;
 }
 
 #msCart .image, #msCart .code{
@@ -2599,21 +2601,11 @@ div.imgRec{
 }
 
 
-#msCart .productRow:nth-child(even) {
-  background: #e9e9e9;
-}
 #msCart .productRow {
   display: table-row;
+
 }
 
-#msCart .image {
-  width: 90px;
-}
-
-#msCart .image img {
-  max-width: 80px;
-  /* padding: 5px 10px; */
-}
 
 #msCart .remove-btn {
   border: 0;
@@ -2644,6 +2636,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   float: left;
   width: 20px;
   text-decoration: none;
+  color: #000;
 }
 
 .bxr-quantity-text, .bxr-quantity-button-minus, .bxr-quantity-button-plus, .icon-button-cart, .bxr-quantity-button-delay, .icon-button-delay, .icon-button-delete, .compare-button-delete {
@@ -2706,9 +2699,15 @@ span.bxr-quantity-text {
   text-align: left;
 }
 
-#msCart img, {
+.productRow div.image {
   width: 45px;
   height: 45px;
+}
+
+div.image img {
+  height: 100%;
+  /* width: 100%; */
+  background-size: cover;
 }
 
 span.delItem i:hover{
@@ -2762,4 +2761,10 @@ span.delItem i:hover{
 
 #orderForm{
   display: none;
+}
+
+div.hr{
+  position: absolute;
+  border: solid #DCDCDC 1px;
+  width: 99.8%;
 }

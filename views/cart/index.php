@@ -38,23 +38,24 @@
                             </div>
                             <?php foreach ($products as $product): ?>
                                 <div class="productRow" data-id="<?php echo $product['id'];?>">
-                                <div class="image">
-                                    <img src="<?php echo Product::getImage($product['id']);?>" alt="Фото" title="<?php echo $product['name'];?>"/>
+                                    <div class="image">
+                                        <img src="<?php echo Product::getImage($product['id']);?>" alt="Фото" title="<?php echo $product['name'];?>"/>
+                                    </div>
+                                    <div class="code"><span><?php echo $product['code'];?></span></div>
+                                    <div class="title">
+                                        <a href="/phpShop/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a><br/>
+                                        <button class="remove-btn" title="Удалить" data-idProduct="<?php echo $product['id'];?>">Удалить</button>
+                                    </div>
+                                    <div class="count">
+                                        <a href="#" class="bxr-quantity-button-minus">-</a>
+                                        <span class="bxr-quantity-text"><?php echo $productsInCart[$product['id']];?></span>
+                                        <a href="#" class="bxr-quantity-button-plus">+</a>
+                                    </div>
+                                    <div class="price"><span><?php echo $product['price'];?></span> руб.</div>
                                 </div>
-                                <div class="code"><span><?php echo $product['code'];?></span></div>
-                                <div class="title">
-                                    <a href="/phpShop/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a><br/>
-                                    <button class="remove-btn" title="Удалить" data-idProduct="<?php echo $product['id'];?>">Удалить</button>
-                                </div>
-                                <div class="count">
-                                    <a href="#" class="bxr-quantity-button-minus">-</a>
-                                    <span class="bxr-quantity-text"><?php echo $productsInCart[$product['id']];?></span>
-                                    <a href="#" class="bxr-quantity-button-plus">+</a>
-                                </div>
-                                <div class="price"><span><?php echo $product['price'];?></span> руб.</div>
-
-                                </div>
+                                <div class="hr"></div>
                             <?php endforeach; ?>
+                            
                             <div class="footer">
                                 <div class="image">&nbsp;</div>
                                 <div class="code">&nbsp;</div>

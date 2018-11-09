@@ -1,5 +1,7 @@
 <?php
 session_start();
+define ('rootFolder', '/phpShop');
+
 // FRONT COTROLLER
 
 // 1. Общие настройки

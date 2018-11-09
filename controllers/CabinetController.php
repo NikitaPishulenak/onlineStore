@@ -43,6 +43,13 @@ class CabinetController
 		require_once(ROOT . '/views/cabinet/edit.php');
 		return true;
     }
+
+    public function actionShowOrder(){
+        echo $userId=User::checkLogged();
+       
+		//require_once(ROOT . '/views/cabinet/index.php');
+		return true;
+    }
     
 }
 ?>

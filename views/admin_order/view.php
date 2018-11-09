@@ -8,8 +8,8 @@
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление заказами</a></li>
+                    <li><a href="/phpShop/admin">Админпанель</a></li>
+                    <li><a href="/phpShop/admin/order">Управление заказами</a></li>
                     <li class="active">Просмотр заказа</li>
                 </ol>
             </div>
@@ -23,10 +23,7 @@
 
             <h5>Информация о заказе</h5>
             <table class="table-admin-small table-bordered table-striped table">
-                <tr>
-                    <td>Номер заказа</td>
-                    <td><?php echo $order['id']; ?></td>
-                </tr>
+
                 <tr>
                     <td>Имя клиента</td>
                     <td><?php echo $order['user_name']; ?></td>
@@ -76,7 +73,7 @@
                 <?php endforeach; ?>
             </table>
 
-            <a href="/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
+            <a href="/phpShop/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
         </div>
 
 
