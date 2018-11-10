@@ -10,6 +10,11 @@ return array(
 	'phpShop/login' => 'user/login',
 	'phpShop/logout' => 'user/logout', //вход пользователя
 	'phpShop/register' => 'user/register', //регистрация пользователя
+	
+	'phpShop/cabinet/order/view/([0-9]+)' => 'cabinet/viewOrder/$1',
+	// 'phpShop/cabinet/order/update/([0-9]+)' => 'cabinet/editOrder/$1',
+	'phpShop/cabinet/order/delete/([0-9]+)' => 'cabinet/delOrder/$1',
+
 	'phpShop/cabinet/editPassword' => 'cabinet/editPassword',
 	'phpShop/cabinet/history' => 'cabinet/showOrder',
 	'phpShop/cabinet' => 'cabinet/index',

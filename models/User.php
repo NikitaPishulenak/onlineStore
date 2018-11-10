@@ -43,7 +43,6 @@ class User
         if (strlen($phone) >= 7) {
             return true;
         }
-        
         return false;
     }
     

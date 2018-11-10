@@ -15,14 +15,14 @@ class Order
      * @param array $products <p>Массив с товарами</p>
      * @return boolean <p>Результат выполнения метода</p>
      */
-    public static function save($userName, $userPhone, $userComment, $userId, $products)
+    public static function save($userName, $userPhone, $userComment, $userId, $products, $total_sum)
     {
         // Соединение с БД
         $db = Db::getConnection();
 
         // Текст запроса к БД
-        $sql = 'INSERT INTO product_order (user_name, user_phone, user_comment, user_id, products) '
-                . 'VALUES (:user_name, :user_phone, :user_comment, :user_id, :products)';
+        $sql = 'INSERT INTO product_order (user_name, user_phone, user_comment, user_id, products, total_sum) '
+                . 'VALUES (:user_name, :user_phone, :user_comment, :user_id, :products, :total_sum)';
 
         $products = json_encode($products);
 
@@ -32,6 +32,7 @@ class Order
         $result->bindParam(':user_comment', $userComment, PDO::PARAM_STR);
         $result->bindParam(':user_id', $userId, PDO::PARAM_STR);
         $result->bindParam(':products', $products, PDO::PARAM_STR);
+        $result->bindParam(':total_sum', $total_sum, PDO::PARAM_STR);
 
         return $result->execute();
     }
@@ -46,7 +47,7 @@ class Order
         $db = Db::getConnection();
 
         // Получение и возврат результатов
-        $result = $db->query('SELECT id, user_name, user_phone, date, status FROM product_order ORDER BY id DESC');
+        $result = $db->query('SELECT id, user_name, user_phone, date, status FROM product_order ORDER BY status ASC, id DESC');
         $ordersList = array();
         $i = 0;
         while ($row = $result->fetch()) {
@@ -58,6 +59,49 @@ class Order
             $i++;
         }
         return $ordersList;
+    }
+
+    /**
+     * Возвращает id хозяина заказа по ид заказа
+     */
+    public static function checkOwner($idOwner, $idOrder)
+    {
+        $db = Db::getConnection();
+
+        $sql = "SELECT user_id FROM product_order WHERE id=:idOrder";
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':idOrder', $idOrder, PDO::PARAM_INT);
+        $result->execute();
+
+        $user = $result->fetch();
+        if ($user) {
+            if($user['user_id']==$idOwner)
+            return true;
+        }
+        ?><script>document.location.href='/phpShop/cabinet/history'</script><?php      
+    }
+
+        /**
+     * Возвращает список заказов конкретного пользователя
+     * @return array <p>Список заказов</p>
+     */
+    public static function getOrdersListForUser($idUser)
+    {
+        $db = Db::getConnection();
+        $productsList = array();
+
+        $result = $db->query("SELECT * FROM product_order WHERE user_id = $idUser ORDER BY status ASC, id DESC");
+
+        $i = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $productsList[$i] = $row;
+            $productsList[$i]['status_val']=self::getStatusText($row['status']);
+            $productsList[$i]['date']=self::convertDate($row['date']);
+            $i++;
+        }
+
+        return $productsList;
     }
 
     /**
@@ -155,6 +199,12 @@ class Order
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
+    }
+
+    public static function convertDate($date)
+    {
+        setlocale(LC_TIME,"ru_RUS.utf8");
+        return date("j.m.Y", strtotime($date));
     }
 
 }

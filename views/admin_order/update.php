@@ -39,8 +39,13 @@
                             <div class="col-sm-8"><?php echo $order['date']; ?></div>
                         </div><br>
                         <div class="row">
+                            <div class="col-sm-4"><strong>Сумма чека:</strong></div>
+                            <div class="col-sm-8"><?php echo $order['total_sum']; ?> руб.</div>
+                        </div><br>
+                        
+                        <div class="row">
                             <div class="col-sm-4"><strong>Статус:</strong></div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-5">
                                 <select name="status">
                                     <option value="1" <?php if ($order['status'] == 1) echo ' selected="selected"'; ?>>Новый заказ</option>
                                     <option value="2" <?php if ($order['status'] == 2) echo ' selected="selected"'; ?>>В обработке</option>

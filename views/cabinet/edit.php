@@ -3,6 +3,14 @@
 <section>
     <div class="container">
         <div class="row">
+        <br/>
+                        
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="/phpShop/cabinet">Аккаунт</a></li>
+                    <li class="active">Смена пароля</li>
+                </ol>
+            </div>
 
             <div class="col-sm-4 col-sm-offset-4 padding-right">
                 

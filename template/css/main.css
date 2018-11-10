@@ -2768,3 +2768,39 @@ div.hr{
   border: solid #DCDCDC 1px;
   width: 99.8%;
 }
+
+div.orderItem{
+  box-sizing: border-box;
+  /* font-size: 0.75rem; */
+  border: 1px solid #fdeed3;
+  padding: 1em 3em 1em 1em;
+  margin-bottom: .5em;
+  height: auto;
+  position: relative;
+  margin: 0 1em 1em 0;
+  float: left;
+  width: 250px;
+}
+
+div.orderItem:hover{
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-out;
+}
+
+div.orderNumber{
+  padding-bottom: 15px;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+div.orderNumber .options{
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+div.orderNumber a, div.orderNumber span{
+  margin: 0 7px;
+  color: #FE980F;
+  cursor: pointer;
+}

@@ -25,6 +25,8 @@ class CartController
                 $userName=$_POST['userName'];
                 $userPhone=$_POST['userPhone'];
                 $userComment=$_POST['userComment'];
+                $total_sum=Cart::getTotalPrice();
+                echo $total_sum;
     
                 $errors = false;
                 
@@ -43,7 +45,7 @@ class CartController
                     else{
                         $userId=User::checkLogged();
                     }
-                    $result=Order::save($userName, $userPhone, $userComment, $userId, $productsInCart);
+                    $result=Order::save($userName, $userPhone, $userComment, $userId, $productsInCart, $total_sum);
                     if($result){
                         Cart::clear();
                         ?><script>

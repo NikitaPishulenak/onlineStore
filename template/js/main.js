@@ -36,6 +36,17 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$('span.delProduct').click(function(){
+		var id=$(this).attr('data-idOrder');
+		var isDel=confirm("Вы действительно хотите отменить заказ #"+id);
+        if(isDel){
+			$.post("/phpShop/cabinet/order/delete/"+id, {}, function () {
+				location.reload();
+			});
+		}
+		return false;
+	});
+
 	$('.bxr-quantity-button-plus').click(function(){
 		var id=$(this).parent().parent().attr('data-id');
 		addInCart(id);
