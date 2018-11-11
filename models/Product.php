@@ -66,6 +66,7 @@ class Product
             return $products;       
         }
     }
+    
     public static function getCatalogProducts()
     {
         $db = Db::getConnection();
@@ -314,5 +315,21 @@ class Product
         }
         return $products;
     }
+
+    // public static function searchProducts($text)
+    // {
+    //     $db = Db::getConnection();
+    //     $searchedProductsList = array();
+
+    //     $result = $db->query('SELECT * FROM product WHERE status = "1" and name LIKE '%$text%' ORDER BY id DESC ');
+
+    //     $i = 0;
+    //     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    //         $searchedProductsList[$i] = $row;
+    //         $i++;
+    //     }
+
+    //     return $searchedProductsList;
+    // }
 
 }

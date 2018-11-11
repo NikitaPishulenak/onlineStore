@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Главная</title>
+        <title>phpShop</title>
         <link href="/phpShop/template/css/bootstrap.min.css" rel="stylesheet">
         <link href="/phpShop/template/css/font-awesome.min.css" rel="stylesheet">
         <link href="/phpShop/template/css/prettyPhoto.css" rel="stylesheet">
@@ -57,6 +57,7 @@
                                 <a href="/phpShop"><img src="/phpShop/template/images/home/logo.png" alt="LOGO" /></a>
                             </div>
                         </div>
+                        
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">                                    
@@ -72,7 +73,21 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="col">
+                            <form class="navbar-form navbar-right" action="#">
+                                <div class="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="textSearch" placeholder="Поиск...">
+                                    </div>
+                                    <div class="btn btn-default" id="search">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </div>
+                                </div>
+                            </form>                            
+                        </div>
+
                     </div>
+                   
                 </div>
             </div><!--/header-middle-->
 

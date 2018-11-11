@@ -73,6 +73,17 @@ $(document).ready(function(){
 		$(this).hide(400);
 		$("#orderForm").show(600);
 	});
+
+	$('div#search').click(function(){
+		var searchText=$("input#textSearch").val();
+		if(searchText!=""){
+			$.post("/phpShop/search/"+searchText, {}, function (data) {
+				$("section").html(data);
+				return;
+			});
+		}
+		
+	});
 	
 	$(function () {
 		$.scrollUp({

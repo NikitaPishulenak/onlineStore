@@ -2804,3 +2804,14 @@ div.orderNumber a, div.orderNumber span{
   color: #FE980F;
   cursor: pointer;
 }
+
+.search{
+  display: flex;
+  align-items: stretch;
+  height: 34px;
+  
+}
+
+#textSearch{
+  min-width: 50vw;
+}
