@@ -1,4 +1,5 @@
 <footer id="footer"><!--Footer-->
+<div class="index-shadow"></div>
     <div class="footer-bottom">
         <div class="container">
             <div class="row">

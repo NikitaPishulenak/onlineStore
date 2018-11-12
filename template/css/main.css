@@ -347,12 +347,14 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  background: #F0F0E9;
+  background: url(/phpShop/template/images/home/bg_footer.png) repeat;
+  /* position: relative; */
+  overflow: hidden;
 }
 
 
 .footer-top .container {
-  border-bottom: 1px solid #E0E0DA;
+  /* border-bottom: 1px solid #E0E0DA; */
   padding-bottom: 20px;
 }
 
@@ -546,7 +548,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: #D6D6D0;
+  /* background: #D6D6D0; */
   padding-top: 10px;
 }
 
@@ -2814,4 +2816,25 @@ div.orderNumber a, div.orderNumber span{
 
 #textSearch{
   min-width: 50vw;
+}
+
+.index-shadow {
+  height: 5px;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 10px 4px #b3b3b3;
+  box-shadow: 0 0 10px 4px #b3b3b3;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 13px;
+}
+
+.index-shadow:before {
+  content: '';
+  position: absolute;
+  width: 300%;
+  left: -100%;
+  height: 17px;
+  background: #fff;
+  top: -13px;
 }

@@ -10,7 +10,8 @@ return array(
 	'phpShop/login' => 'user/login',
 	'phpShop/logout' => 'user/logout', //вход пользователя
 	'phpShop/register' => 'user/register', //регистрация пользователя
-	'phpShop/search/([a-zA-Zа-яА-я]+)' => 'site/search/$1',
+
+	'phpShop/search/([a-zA-Zа-яА-я\d%]+)' => 'site/search/$1',
 	
 	'phpShop/cabinet/order/view/([0-9]+)' => 'cabinet/viewOrder/$1',
 	// 'phpShop/cabinet/order/update/([0-9]+)' => 'cabinet/editOrder/$1',

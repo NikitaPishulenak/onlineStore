@@ -82,8 +82,16 @@ $(document).ready(function(){
 				return;
 			});
 		}
-		
 	});
+
+	document.addEventListener('keydown', function (e) {
+		if (e.keyCode == 13) {
+			if($("input#textSearch").is( ":focus" )){
+				$('div#search').click();
+				return false;
+			}
+		}
+	}, false);
 	
 	$(function () {
 		$.scrollUp({

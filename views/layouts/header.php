@@ -74,8 +74,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <form class="navbar-form navbar-right" action="#">
-                                <div class="search">
+                            <!-- <form class="navbar-form navbar-right" action="#"> -->
+                                <div class="search navbar-form navbar-right">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="textSearch" placeholder="Поиск...">
                                     </div>
@@ -83,7 +83,7 @@
                                         <span class="glyphicon glyphicon-search"></span>
                                     </div>
                                 </div>
-                            </form>                            
+                            <!-- </form>                             -->
                         </div>
 
                     </div>

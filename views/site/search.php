@@ -25,8 +25,8 @@
                     <h2 class="title text-center">Найденные товары</h2>
                     
                     
-                    
-                    <?php foreach ($searchedProducts as $product): ?>
+                    <?php if (!empty($searchProducts)): ?>
+                    <?php foreach ($searchProducts as $product): ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -50,14 +50,13 @@
                             </div>
                         </div>
                     <?php endforeach;?>
+                    <?php else: ?>
+                        <p>Товары не найдены :(</p>
+                    <?php endif; ?>
+
                     
  
                 </div>
-                <!-- Постраничная навигация -->
-                <?php echo $pagination->get(); ?>  
-
-                
-
             </div>
         </div>
     </div>

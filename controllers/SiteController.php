@@ -60,18 +60,10 @@ class SiteController
     public function actionSearch($text){
 		$categories = array();
         $categories = Category::getCategoriesList();
-        echo $text;
+        $text=urldecode($text);
 
-        // $latestProducts = array();
-        // $latestProducts = Product::getLatestProducts(6, $page);
-
-        // $total = Product::getTotalProductsInCatalog();
-
-        // // Создаем объект Pagination - постраничная навигация
-        //$pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
-
-        // // Список товаров для слайдера
-        // $sliderProducts = Product::getRecommendedProducts();
+        $searchProducts = array();
+        $searchProducts = Product::getSearchedProducts($text);
        
 		require_once(ROOT . '/views/site/search.php');
 		return true;

@@ -316,20 +316,22 @@ class Product
         return $products;
     }
 
-    // public static function searchProducts($text)
-    // {
-    //     $db = Db::getConnection();
-    //     $searchedProductsList = array();
+    public static function getSearchedProducts($text)
+    {
+        $db = Db::getConnection();
 
-    //     $result = $db->query('SELECT * FROM product WHERE status = "1" and name LIKE '%$text%' ORDER BY id DESC ');
+        $sql = "SELECT * FROM product WHERE availability='1' and name LIKE '%$text%'";
 
-    //     $i = 0;
-    //     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    //         $searchedProductsList[$i] = $row;
-    //         $i++;
-    //     }
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
 
-    //     return $searchedProductsList;
-    // }
+        $i = 0;
+        $products = array();
+        while ($row = $result->fetch()) {
+            $products[$i]= $row;
+            $i++;
+        }
+        return $products;
+    }
 
 }
