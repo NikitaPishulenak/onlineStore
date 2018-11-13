@@ -105,13 +105,14 @@ class User
         $_SESSION['user'] = $userId;
         
         $db = Db::getConnection();
-        $sql = 'SELECT name FROM user WHERE id = :id';
+        $sql = 'SELECT name, email FROM user WHERE id = :id';
         $result = $db->prepare($sql);
         $result->bindParam(':id', $userId, PDO::PARAM_INT);
         $result->execute();
 
         $row=$result->fetch(PDO::FETCH_ASSOC);
         $_SESSION['name'] = $row['name'];
+        $_SESSION['email'] = $row['email'];
     }
 
     public static function checkLogged()

@@ -69,6 +69,7 @@ a#scrollUp i{
 
 .header_top {
   background: none repeat scroll 0 0 #F0F0E9;
+  height: 70px;
 }
 
 .contactinfo ul li:first-child{
@@ -209,6 +210,13 @@ td .fa{ margin-left:20px;}
   margin-top: 10px;
 }
 
+.dropdown .sub-menu a {
+  background:  rgba(0, 0, 0, 0);
+}
+
+.dropdown .sub-menu a:hover {
+  background:  rgba(0, 0, 0, 0);
+}
 
 .shop-menu ul li a i{
 	margin-right:3px;
@@ -235,9 +243,9 @@ td .fa{ margin-left:20px;}
   padding-left: 15px;
 }
 
-.mainmenu ul li:first-child{
+/* .mainmenu ul li:first-child{
   padding-left: 0px;
-}
+} */
 
 .mainmenu ul li a {
 	color: #696763;
@@ -290,16 +298,23 @@ td .fa{ margin-left:20px;}
 ul.sub-menu {
 	position: absolute;
 	top: 30px;
-	left: 0;
+	/* left: 0; */
 	background: rgba(0, 0, 0, 0.6);
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	width: 220px;
+	width: 150px;
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 	display: none;
-	z-index: 999;
+  z-index: 999;
+  border-radius: 3px;
+  right: 0;
+  height: auto;
+}
+
+.loginForm{
+  text-align: center;
 }
 
 .dropdown ul.sub-menu li .active{
@@ -313,7 +328,7 @@ ul.sub-menu {
 }
 
 .navbar-nav li ul.sub-menu li:last-child{
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar-nav li ul.sub-menu li a{
@@ -1418,6 +1433,14 @@ div.imgRec{
 
 .logo-404 {
   margin-top: 60px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.header_top div.mainmenu{
+  margin-top: 25px;
 }
 
 .content-404 h1 {
@@ -2837,4 +2860,32 @@ div.orderNumber a, div.orderNumber span{
   height: 17px;
   background: #fff;
   top: -13px;
+}
+
+.link-hover-solid a {
+  display: inline-block;
+  color:#FE980F;
+  line-height: 1;
+  text-decoration:none;
+  cursor: pointer;
+}
+.link-hover-solid a:after {
+  position: relative;
+  background-color: #FE980F;
+  display: block;
+  content: "";
+  height: 3px;
+  width: 0%;
+  left:50%;
+  -webkit-transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  transform:translateX(-50%);
+  -webkit-transition: width .3s ease-in-out;
+  -moz--transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+}
+
+.link-hover-solid a:hover:after,
+.link-hover-solid a:focus:after {
+  width: 100%;
 }

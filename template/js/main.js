@@ -9,6 +9,7 @@
 /*scroll to top*/
 
 $(document).ready(function(){
+	$("div#history").hide();
 	if($("div.left-sidebar").is(':visible')){
 		var leftMenuTop=$("div.left-sidebar").offset().top;
 		$(document).scroll(function() {
@@ -83,6 +84,33 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+	// $('a.loginInp').hover(function(){
+	// 	$("div#history").show();
+	// 	$(".popup-content #content").html('<a href="/phpShop/register"><i class="fa fa-archive"></i> Регистрация</a>');
+	// 	var widHistory=$("div#history").width();
+	// 	$("#history").css("top", Number($(this).offset().top + 25));
+	// 	$("#history").css("left", Number($(this).offset().left - widHistory/2+20));
+	// 	$(document).mouseout(function (e) {
+	// 		// if (!$("#history").is(e.target) && $("#history").has(e.target).length === 0) { // и не по его дочерним элементам
+    //             $("div#history").hide();
+    //         // }
+	// 	});
+
+	// 	// $("input#login").click(function(){
+	// 	// 	var email=$("#history input.email").val();
+	// 	// 	var pwd=$("#history input.password").val();
+	// 	// 	if( (email !="") && (pwd !="") ){
+	// 	// 		console.log("send");
+	// 	// 		$.post("/phpShop/login/"+email+"/"+pwd, {}, function () {
+	// 	// 			// location.reload();
+	// 	// 		});
+	// 	// 	}
+	// 	// 	else{
+	// 	// 		console.log("kjqqq");
+	// 	// 	}
+	// 	// });
+	// });
 
 	document.addEventListener('keydown', function (e) {
 		if (e.keyCode == 13) {

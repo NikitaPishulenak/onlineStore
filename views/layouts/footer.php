@@ -8,6 +8,9 @@
             </div>
         </div>
     </div>
+    <div class='popup-content' id='history'>
+        <div id="content">&nbsp;</div>
+    </div>
 </footer><!--/Footer-->
 
 

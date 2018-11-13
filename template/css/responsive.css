@@ -125,6 +125,10 @@
 /* xs */
 @media (max-width: 767px) {
 
+.navbar-toggle{
+	margin-top: 15px; 
+}
+
 .header_top .col-sm-6:first-child{
 	display: inline-block;
 	float: left;
@@ -188,22 +192,8 @@
 	display: none;
 }
 
-ul.sub-menu{
-  position: relative;
-  width: auto;
-  display: block;
-  background: transparent;
-  box-shadow: none;
-  top: 0;
-}
-
-.sub-menu li{
-	background: transparent;
-}
-
-.mainmenu .navbar-nav li ul.sub-menu li{
-	background: transparent;
-	padding-bottom:0;
+.link-hover-solid a:after {
+	height: 0;
 }
 
 .nav.navbar-nav > li:hover > ul.sub-menu{
@@ -280,6 +270,10 @@ ul.sub-menu{
 
 /* XS Portrait */
 @media (max-width: 480px) {
+
+/* .navbar-toggle{
+	margin-top: 15px; 
+} */
 
 .contactinfo{
 	text-align: center;
@@ -376,20 +370,20 @@ ul.sub-menu{
 	display: none;
 }
 
-ul.sub-menu{
+/* ul.sub-menu{
   position: relative;
   width: auto;
   display: block;
   background: transparent;
   box-shadow: none;
   top: 0;
-}
+} */
 
 
-.mainmenu .navbar-nav li ul.sub-menu li{
+/* .mainmenu .navbar-nav li ul.sub-menu li{
 	background: transparent;
 	padding-bottom:0;
-}
+} */
 
 .nav.navbar-nav > li:hover > ul.sub-menu{
   -webkit-animation: none;
