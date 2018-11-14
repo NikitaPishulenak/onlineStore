@@ -1,5 +1,5 @@
 div.relativeHead{
-	padding: 25px 45px;
+	padding: 45px;
 }
 
 /* lg */ 
@@ -47,13 +47,15 @@ div.relativeHead{
 
 	div.fixedHead{
 		position: fixed;
-		z-index: 3;
-		width: 100%;
-		top: 0;
 		opacity: 0.9;
 	}
+
 	div.relativeHead{
 		margin-top: 70px;
+	}
+
+	.headContact {
+		top: -70px;
 	}
 
 	.header_top div.index-shadow{

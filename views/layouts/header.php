@@ -52,7 +52,7 @@
                                                 <li class="link-hover-solid"><a href="/phpShop/catalog/">Каталог товаров</a></li>
                                                 <li class="link-hover-solid"><a href="/phpShop/cart/">Корзина</a></li> 
                                             </ul>
-                                        </li> 
+                                        </li>
                                         <li class="link-hover-solid"><a href="/phpShop/blog/">Блог</a></li> 
                                         <li class="link-hover-solid"><a href="/phpShop/about/">О магазине</a></li>
                                         <li class="link-hover-solid"><a href="/phpShop/contacts/">Контакты</a></li>
@@ -69,14 +69,16 @@
            
             <div class="relativeHead">
                 <div class="header-middle">
-                    <div class="row">
-                    <div class="container">
-                        <span class="txt anim-text-flow">How are you? Bacon ipsum dolor sit amet.</span>
-                    </div>
-                    </div>
+
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-7 col-md-8">
+                        <div class="headContact">
+                            <ul class="tm-contact">
+                                <li><img src="/phpShop/template/images/home/mts.png" alt="МТС"><span>+375(29)</span> 567-61-37</li>
+                                <li><img src="/phpShop/template/images/home/velcom.png" alt="Velcon"><span>+375(29)</span> 658-76-78</li>
+                            </ul>
+                        </div>
+                        <div class="row"><br><br>
+                            <div class="col-sm-12 ">
                                 <div class="search ">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="textSearch" placeholder="Поиск...">
@@ -87,8 +89,8 @@
                                 </div>
                             </div>
                             
-                            <div class="col-sm-5 col-md-4">
-                                <div class="shop-menu pull-right">
+                            <div class="col-sm-12 ">
+                                <div class="shop-menu pull-left">
                                     <ul class="nav navbar-nav">                                    
                                         <li><a href="/phpShop/cart"  class="headIcon"><i class="fa fa-shopping-cart headIcon"></i> Корзина</a><i id="cart-count"><?php echo Cart::totalProductInCart(); ?></i></li>
                                         

@@ -229,7 +229,7 @@ td .fa{ margin-left:20px;}
 
 
 .shop-menu ul li a {
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
   color: #696763;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -254,7 +254,7 @@ td .fa{ margin-left:20px;}
 
 .shop-menu ul li a:hover {
 	color:#fe980f;
-	background:#fff;
+	background:transparent;
 }
 
 
@@ -332,7 +332,7 @@ ul.sub-menu {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	width: 150px;
+	width: 160px;
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 	display: none;
@@ -340,6 +340,7 @@ ul.sub-menu {
   border-radius: 3px;
   right: 0;
   height: auto;
+  text-align: center;
 }
 
 .loginForm{
@@ -354,6 +355,10 @@ ul.sub-menu {
 
 .navbar-nav li ul.sub-menu li{
   padding: 10px 20px 0 ;
+}
+
+.shop-menu .navbar-nav{
+  margin-top: 10px;
 }
 
 .navbar-nav li ul.sub-menu li:last-child{
@@ -2923,3 +2928,36 @@ div.orderNumber a, div.orderNumber span{
   font-size: 20pt;
 }
 
+.headContact{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 290px;
+  height: 241px;
+  /* border-radius: 100%;
+  background: #FDB45E; */
+  background-image: url(/phpShop/template/images/home/blot.png);
+  background-repeat: no-repeat;
+  background-size: contain; 
+}
+
+div.fixedHead{
+  position: relative;
+  opacity: 0.8;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.tm-contact {
+  list-style: none;
+  margin-top: 85px;
+  margin-left: 40px;
+  color: #fff;
+  font-size: 21px;
+}
+
+.tm-contact li span {
+  /* color: #fff; */
+  font-size: 16px;
+}
