@@ -139,6 +139,7 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+	
 
 	function addInCart(id){
 		$.post("/phpShop/cart/addAjax/"+id, {}, function (data) {
