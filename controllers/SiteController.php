@@ -3,8 +3,8 @@
 class SiteController
 {
 	public function actionIndex($page=1){
-		// $categories = array();
-        // $categories = Category::getCategoriesList();
+		$categories = array();
+        $categories = Category::getCategoriesList();
 
         $latestProducts = array();
         $latestProducts = Product::getLatestProducts(6, $page);

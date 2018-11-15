@@ -9,17 +9,17 @@
 /*scroll to top*/
 
 $(document).ready(function(){
-	$("div#history").hide();
-	if($("div.left-sidebar").is(':visible')){
-		var leftMenuTop=$("div.left-sidebar").offset().top;
-		$(document).scroll(function() {
-			if(window.pageYOffset>=leftMenuTop){
-				$("div.left-sidebar").css('position', 'fixed').css('top', '50px');
-			}else{
-				$("div.left-sidebar").css('position', 'inherit').css('top', 'inherit');
-			}
-		});
-	}
+	// $("div#history").hide();
+	// if($("div.left-sidebar").is(':visible')){
+	// 	var leftMenuTop=$("div.left-sidebar").offset().top;
+	// 	$(document).scroll(function() {
+	// 		if(window.pageYOffset>=leftMenuTop){
+	// 			$("div.left-sidebar").css('position', 'fixed').css('top', '50px');
+	// 		}else{
+	// 			$("div.left-sidebar").css('position', 'inherit').css('top', 'inherit');
+	// 		}
+	// 	});
+	// }
 
 	// $(".phonNumber").mask('+375-(99)-999-99-99');
 
@@ -84,6 +84,15 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+	$('div').delegate(".flack", "mouseover", function (e) {
+        $(this).find(".advtImg").css({ 'top': '-25px', 'opacity': '1', 'transition': '.3s ease-in-out' });
+    });
+
+    $('div').delegate(".flack", "mouseout", function () {
+		$(this).find(".advtImg").css({ 'top': '0', 'opacity': '0.5', 'transition': '.3s ease-in-out' });
+    });
+	
 
 	// $('a.loginInp').hover(function(){
 	// 	$("div#history").show();

@@ -1,6 +1,9 @@
 div.relativeHead{
 	padding: 45px;
 }
+.carousel .item{
+	height: 340px;   
+}
 
 /* lg */ 
 @media (min-width: 1200px) {
@@ -8,10 +11,14 @@ div.relativeHead{
 }
 
 /* md */
-@media (min-width: 992px) {
+@media (min-width: 992px ) and (max-width: 1199px) {
 
 .header_top div.index-shadow{
 	display: none;
+}
+
+.carousel .item{
+	height: 281px;   
 }
  
 .usa{
@@ -43,7 +50,7 @@ div.relativeHead{
 
 
 /* sm */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
 
 	div.fixedHead{
 		position: fixed;
@@ -60,6 +67,10 @@ div.relativeHead{
 
 	.header_top div.index-shadow{
 		display: none;
+	}
+
+	.carousel .item{
+		height: 214px;   
 	}
 
 	.shop-menu ul li a{
@@ -150,6 +161,16 @@ div.relativeHead{
 	@media (max-width: 767px) {
 	.header div.index-shadow{
 		display: none;
+	}
+
+	div#testCarousel{
+		width: 445px;
+		height: 179px;
+		margin: 0 auto;
+	}
+
+	.carousel .item{
+		height: 190px;   
 	}
 
 	.navbar-toggle{
@@ -296,6 +317,10 @@ div.relativeHead{
 
 	.shop-menu ul li a {
 		padding-right: 15px;
+	}
+
+	div#testCarousel{
+		display: none;
 	}
 
 .contactinfo{

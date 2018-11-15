@@ -2961,3 +2961,69 @@ div.fixedHead{
   /* color: #fff; */
   font-size: 16px;
 }
+
+div#testCarousel{
+  height: auto;
+  margin: 0 auto;
+}
+
+.carousel .item{
+  background: #fff; 
+  height: 340px;   
+}
+.carousel .item img{
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+div.flack{
+  text-align: center;
+  margin: 35px 10px 10px 10px;
+}
+div.flack .advtImg{
+  position: relative;
+  height: 100px;
+  /* margin-top: 40px; */
+  opacity: 0.5;
+}
+div.flack .advtImg img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 0;
+}
+
+div.bxr{
+  background: rgb(245, 174, 82);
+  background: linear-gradient(65deg, rgb(250, 205, 146), #FE980F);
+  
+  margin: 30px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+
+div.bxr div{
+  padding: 20px 7px;
+}
+
+div.bxr span{
+  font-size: 16px;
+  padding-left: 10px;
+  color: #fff;
+}
+
+/* .carousel h2{
+	color: #fff;
+	margin: 0;
+  padding-top: 50px;
+  font-size: 48px;
+}
+.carousel p{
+	color: #666;
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: 30px;
+	margin-bottom: 40px;
+} */

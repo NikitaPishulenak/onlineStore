@@ -1,9 +1,11 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
+
+
 <section>
     <div class="container">
         <div class="row">
-            <!-- <div class="col-sm-3">
+            <div class="col-sm-3">
                 <div class="left-sidebar">
                     <h2>Каталог</h2>
                     <div class="panel-group category-products">
@@ -11,16 +13,88 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a href="/phpShop/category/<?php echo $categoryItem['id'];?>">
-                                            <?php echo $categoryItem['name'];?>
-                                        </a>
+                                         <li class="link-hover-solid">
+                                            <a href="/phpShop/category/<?php echo $categoryItem['id'];?>">
+                                                <?php echo $categoryItem['name'];?>
+                                            </a>
+                                         </li> 
                                     </h4>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            <div class="col-sm-9">
+                <div id="testCarousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <a href="/phpShop/catalog"><img src="/phpShop/template/images/home/banner1.jpg"></a>
+                            
+                        </div>
+                        <div class="item">
+                            <a href="/phpShop/catalog"><img src="/phpShop/template/images/home/banner2.jpg"></a>
+                        </div>
+                        <div class="item">
+                            <a href="/phpShop/catalog"><img src="/phpShop/template/images/home/banner3.png"></a>
+                        </div>
+                    </div>
+
+                    <a class="left carousel-control" href="#testCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+
+                    <a class="right carousel-control" href="#testCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="flack">
+					<div class="advtImg">
+                        <img src="/phpShop/template/images/home/advt1.jpg">
+                    </div>
+					<h3>Комплексные решения</h3>
+                    <p>Качественная продукция, разработанная с использованием современных технологий, надежный сервис доставки, соблюдение сроков выполнения обязательств.</p>
+					
+				</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="flack">
+					<div class="advtImg">
+                        <img src="/phpShop/template/images/home/advt4.jpg" alt="2">
+                    </div>
+					<h3>Всё для покраски</h3>
+                    <p>Доставляем товар напрямую от мировых производителей красок. На наших складах находится более чем 6000 наименований лакокрасочной продукции.</p>
+					
+				</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="flack">
+					<div class="advtImg">
+                        <img src="/phpShop/template/images/home/advt3.jpg">
+                    </div>
+					<h3>Эксперты отрасли</h3>
+                    <p>Мы постоянно развиваемся, стремимся получать новый опыт, знания и навыки для того, чтобы стать экспертами в своей отрасли и оказывать качественные услуги в сфере торговли лакокрасочной продукцией в Беларуси.</p>
+					
+				</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- <div class="col-sm-12"> -->
+                <div class="bxr">
+                    <div class="col-sm-4"><img src="/phpShop/template/images/home/bucket.png" alt="банка"><span>Большой выбор красок и лаков</span></div>
+                    <div class="col-sm-4"><img src="/phpShop/template/images/home/valet.png" alt="банка"><span>Гибкая система оплаты заказа</span></div>
+                    <div class="col-sm-4"><img src="/phpShop/template/images/home/24-hours.png" alt="банка"><span>Прием заказов 24 часа в сутки</span></div>
+                </div>
+            <!-- </div> -->
+        </div>
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
