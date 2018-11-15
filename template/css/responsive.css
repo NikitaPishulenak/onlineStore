@@ -5,16 +5,37 @@ div.relativeHead{
 	height: 340px;   
 }
 
+div.fixedHead{
+	position: fixed;
+	opacity: 0.9;
+}
+.headContact {
+	top: -70px;
+}
+
+/* div.relativeHead{
+	margin-top: 70px;
+} */
+
 /* lg */ 
 @media (min-width: 1200px) {
 
 }
 
 /* md */
-@media (min-width: 992px ) and (max-width: 1199px) {
+@media (min-width: 992px ) {
 
 .header_top div.index-shadow{
 	display: none;
+}
+
+div.fixedHead{
+	position: fixed;
+	opacity: 0.9;
+}
+
+div.relativeHead{
+	margin-top: 70px;
 }
 
 .carousel .item{
@@ -159,6 +180,18 @@ div.relativeHead{
 
 	/* xs */
 	@media (max-width: 767px) {
+		div.fixedHead{
+			position: relative;
+		}
+	
+		div.relativeHead{
+			margin-top: 70px;
+		}
+	
+		.headContact {
+			top: 0;
+		}
+
 	.header div.index-shadow{
 		display: none;
 	}

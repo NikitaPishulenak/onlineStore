@@ -89,9 +89,9 @@
         <div class="row">
             <!-- <div class="col-sm-12"> -->
                 <div class="bxr">
-                    <div class="col-sm-4"><img src="/phpShop/template/images/home/bucket.png" alt="банка"><span>Большой выбор красок и лаков</span></div>
-                    <div class="col-sm-4"><img src="/phpShop/template/images/home/valet.png" alt="банка"><span>Гибкая система оплаты заказа</span></div>
-                    <div class="col-sm-4"><img src="/phpShop/template/images/home/24-hours.png" alt="банка"><span>Прием заказов 24 часа в сутки</span></div>
+                    <div class="col-md-4 col-xs-12 "><img src="/phpShop/template/images/home/bucket.png" alt="банка"><span>Большой выбор красок и лаков</span></div>
+                    <div class="col-md-4 col-xs-12 "><img src="/phpShop/template/images/home/valet.png" alt="банка"><span>Гибкая система оплаты заказа</span></div>
+                    <div class="col-md-4 col-xs-12 "><img src="/phpShop/template/images/home/24-hours.png" alt="банка"><span>Прием заказов 24 часа в сутки</span></div>
                 </div>
             <!-- </div> -->
         </div>
