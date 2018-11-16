@@ -1,9 +1,9 @@
 div.relativeHead{
 	padding: 45px;
 }
-.carousel .item{
+/* .carousel .item{
 	height: 340px;   
-}
+} */
 
 div.fixedHead{
 	position: fixed;
@@ -13,17 +13,26 @@ div.fixedHead{
 	top: -70px;
 }
 
-/* div.relativeHead{
-	margin-top: 70px;
-} */
 
 /* lg */ 
 @media (min-width: 1200px) {
-
+	div.fixedHead{
+		position: fixed;
+		opacity: 0.9;
+	}
+	
+	div.relativeHead{
+		margin-top: 70px;
+	}
+	
+	div#testCarousel{
+		height: 341px;
+		margin: 0 auto;
+	}
 }
 
 /* md */
-@media (min-width: 992px ) {
+@media (min-width: 992px ) and (max-width: 1199px ) {
 
 .header_top div.index-shadow{
 	display: none;
@@ -36,6 +45,11 @@ div.fixedHead{
 
 div.relativeHead{
 	margin-top: 70px;
+}
+
+div#testCarousel{
+	height: 281px;
+	margin: 0 auto;
 }
 
 .carousel .item{
@@ -90,8 +104,9 @@ div.relativeHead{
 		display: none;
 	}
 
-	.carousel .item{
-		height: 214px;   
+	div#testCarousel{
+		height: 214px;
+		margin: 0 auto;
 	}
 
 	.shop-menu ul li a{

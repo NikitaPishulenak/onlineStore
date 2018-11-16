@@ -141,7 +141,7 @@ class Product
     }
 
       
-    public static function getRecommendedProducts()
+    public static function getRecommendedProducts($count=10)
     {
         $db = Db::getConnection();
 
@@ -149,7 +149,7 @@ class Product
 
         $result = $db->query('SELECT id, name, price, is_new FROM product '
                 . 'WHERE status = "1" AND is_recommended = "1"'
-                . 'ORDER BY id DESC ');
+                . 'ORDER BY id DESC LIMIT '.$count);
 
         $i = 0;
         while ($row = $result->fetch()) {

@@ -30,12 +30,12 @@
                 <div class="header_top"><!--header_top-->
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-3 col-xs-8">
+                            <div class="col-xs-3 divLog">
                                 <div class="logo pull-left">
-                                    <a href="/phpShop"><img src="/phpShop/template/images/home/logo.png" alt="LOGO" /></a>
+                                    <a href="/phpShop"><img src="/phpShop/template/images/home/logo.png" /></a>
                                 </div>
                             </div>
-                            <div class="col-sm-9 ">
+                            <div class="col-xs-9">
                                 <div class="navbar-header">
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                         <span class="sr-only">Toggle navigation</span>

@@ -6,16 +6,16 @@ class SiteController
 		$categories = array();
         $categories = Category::getCategoriesList();
 
-        $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(6, $page);
+        // $latestProducts = array();
+        // $latestProducts = Product::getLatestProducts(6, $page);
 
-        $total = Product::getTotalProductsInCatalog();
+        // $total = Product::getTotalProductsInCatalog();
 
-        // Создаем объект Pagination - постраничная навигация
-        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
+        // // Создаем объект Pagination - постраничная навигация
+        // $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
         // Список товаров для слайдера
-        $sliderProducts = Product::getRecommendedProducts();
+        $recomendedProducts = Product::getRecommendedProducts(20);
        
 		require_once(ROOT . '/views/site/index.php');
 		return true;

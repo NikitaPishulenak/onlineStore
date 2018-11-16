@@ -96,11 +96,11 @@
             <!-- </div> -->
         </div>
 
-            <div class="col-sm-9 padding-right">
-                <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Последние товары</h2>
+            <div class="col-sm-12">
+                <div class="features_items">
+                    <h2 class="title text-center">Мы рекомендуем</h2>
                     
-                    <?php foreach ($latestProducts as $product): ?>
+                    <?php foreach ($recomendedProducts as $product): ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -124,13 +124,10 @@
                             </div>
                         </div>
                     <?php endforeach;?>
-                    
- 
-                </div><!--features_items-->
-                <!-- Постраничная навигация -->
-                <?php echo $pagination->get(); ?>  
+                </div>
 
-                <div class="recommended_items"><!--recommended_items-->
+
+                <!-- <div class="recommended_items">
                     <h2 class="title text-center">Рекомендуемые товары</h2>
                     
                     <div class="cycle-slideshow" 
@@ -174,7 +171,7 @@
                     </a>
 
                 </div>
-            </div><!--/recommended_items-->
+            </div> -->
 
             </div>
         </div>
