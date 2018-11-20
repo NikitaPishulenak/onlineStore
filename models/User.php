@@ -122,9 +122,17 @@ class User
             return $_SESSION['user'];
         }else{
             ?><script>document.location.href='/phpShop/login'</script><?php
-        }
+        }       
+    }
 
-        
+    public static function checkAdmin(){
+        $userId=self::checkLogged();
+        $user=self::getUserById($userId);
+        if($user['role']=="admin"){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public static function isGuest()

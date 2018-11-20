@@ -7,14 +7,11 @@
                 <div class="left-sidebar">
                     <!-- <h2>Каталог</h2> -->
                     <div class="panel-group category-products">
-                        <?php foreach ($categories as $categoryItem): ?>
+                        <?php foreach ($catFields as $catFieldsItem): ?>
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a href="/phpShop/category/<?php echo $categoryItem['id']; ?>"
-                                           class="<?php if ($categoryId == $categoryItem['id']) echo 'active'; ?>"><?php echo $categoryItem['name']; ?>
-                                        </a>
-                                    </h4>
+                                <div class="panel-heading field-title" >
+                                    <span><?php echo $catFieldsItem['title'];?></span>
+                                    <div><?php echo Category::getHTMLField($catFieldsItem['type']);?></div>
                                 </div>
                             </div>
                         <?php endforeach; ?>

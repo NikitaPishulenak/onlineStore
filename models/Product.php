@@ -67,7 +67,7 @@ class Product
         }
     }
     
-    public static function getCatalogProducts($page)
+    public static function getCatalogProducts($page=1)
     {
         $page = intval($page);
         $countList=self::SHOW_BY_DEFAULT;         

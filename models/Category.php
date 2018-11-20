@@ -166,4 +166,33 @@ class Category
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }
+    
+    public static function getCatFields($catId)
+    {
+        $db = Db::getConnection();
+
+        $fieldList = array();
+
+        $result = $db->query('SELECT * FROM categoryFields WHERE idCategory = '.$catId.' ORDER BY sort_order ASC');
+
+        $i = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $fieldList[$i] = $row;
+            $i++;
+        }
+
+        return $fieldList;
+    }
+
+    public static function getHTMLField($type)
+    {
+        switch ($type) {
+            case '1':
+                return '<input type="text" value="" />';
+                break;
+            case '0':
+                return 'Скрыта';
+                break;
+        }
+    }
 }

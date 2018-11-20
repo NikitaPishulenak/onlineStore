@@ -69,9 +69,11 @@ class UserController
             }else {
                 // Если данные правильные, запоминаем пользователя (сессия)
                 User::auth($userId);
-                                
-                // Перенаправляем пользователя в закрытую часть - кабинет 
-                 ?><script>document.location.href='/phpShop/cabinet'</script><?php
+                if(User::checkAdmin()){
+                    ?><script>document.location.href='/phpShop/admin'</script><?php
+                }else{
+                    ?><script>document.location.href='/phpShop/cabinet'</script><?php
+                }
             }
             
         

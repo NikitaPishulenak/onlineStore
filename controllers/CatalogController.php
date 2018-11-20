@@ -22,9 +22,13 @@ class CatalogController
 
     public function actionCategory($categoryId, $page=1)
     {
-        $categories = array();
-        $categories = Category::getCategoriesList();
-        //echo $categoryId;
+        // $categories = array();
+        // $categories = Category::getCategoriesList();
+        echo $categoryId;
+
+        $catFields = array();
+        $catFields = Category::getCatFields($categoryId);
+        print_r($catFields);
 
         $categoryProducts = array();
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);

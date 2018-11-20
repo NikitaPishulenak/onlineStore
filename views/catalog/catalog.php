@@ -3,7 +3,7 @@
 <section>
     <div class="container-flex">
         <div class="row">
-            <div class="col-sm-2 left-sidebar">
+            <div class="col-sm-3 left-sidebar">
                 <!-- <div class=""> -->
                     <h2>Каталог</h2>
                     <div class="panel-group category-products">
