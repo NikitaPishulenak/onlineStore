@@ -22,10 +22,24 @@ $(document).ready(function(){
 	// }
 
 	// $(".phonNumber").mask('+375-(99)-999-99-99');
+	$("span.year").html((new Date()).getFullYear());
 
 	$('.add-to-cart').click(function(){
 		var id=$(this).attr('data-id');
 		addInCart(id);
+		 
+		$(this).parent().find("img")
+            .clone()
+            .css({'position' : 'absolute', 'z-index' : '11100', top: $(this).offset().top-300, left:$(this).offset().left-100})
+            .appendTo("body")
+            .animate({
+				opacity: 0.05,
+                left: $("#cart-count").offset()['left'],
+                top: $("#cart-count").offset()['top'],
+				width: 20
+				}, 1000, function() {
+				$(this).remove();
+            });
 		return false;
 	});
 	

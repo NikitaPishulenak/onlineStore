@@ -1,20 +1,18 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
 <section>
-    <div class="container">
+    <div class="container-flex">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div class="left-sidebar">
-                    <h2>Каталог</h2>
+                    <!-- <h2>Каталог</h2> -->
                     <div class="panel-group category-products">
                         <?php foreach ($categories as $categoryItem): ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a href="/phpShop/category/<?php echo $categoryItem['id']; ?>"
-                                           class="<?php if ($categoryId == $categoryItem['id']) echo 'active'; ?>"
-                                           >                                                                                    
-                                               <?php echo $categoryItem['name']; ?>
+                                           class="<?php if ($categoryId == $categoryItem['id']) echo 'active'; ?>"><?php echo $categoryItem['name']; ?>
                                         </a>
                                     </h4>
                                 </div>
@@ -26,7 +24,7 @@
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Категория</h2>
+                    <!-- <h2 class="title text-center">Категория</h2> -->
 
                     <?php foreach ($categoryProducts as $product): ?>
                         <div class="col-sm-4">

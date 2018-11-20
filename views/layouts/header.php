@@ -47,12 +47,7 @@
                                 <div class="mainmenu pull-left">
                                     <ul class="nav navbar-nav collapse navbar-collapse">
                                         <li class="link-hover-solid"><a href="/phpShop">Главная</a></li>
-                                        <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
-                                            <ul role="menu" class="sub-menu" class="link-hover-solid">
-                                                <li class="link-hover-solid"><a href="/phpShop/catalog/">Каталог товаров</a></li>
-                                                <li class="link-hover-solid"><a href="/phpShop/cart/">Корзина</a></li> 
-                                            </ul>
-                                        </li>
+                                        <li class="link-hover-solid"><a href="/phpShop/catalog">Каталог</a></li>
                                         <li class="link-hover-solid"><a href="/phpShop/blog/">Блог</a></li> 
                                         <li class="link-hover-solid"><a href="/phpShop/about/">О магазине</a></li>
                                         <li class="link-hover-solid"><a href="/phpShop/contacts/">Контакты</a></li>

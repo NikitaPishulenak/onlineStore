@@ -67,14 +67,18 @@ class Product
         }
     }
     
-    public static function getCatalogProducts()
+    public static function getCatalogProducts($page)
     {
+        $page = intval($page);
+        $countList=self::SHOW_BY_DEFAULT;         
+        $offset = ($page-1) * $countList;
+
         $db = Db::getConnection();
         $productsList = array();
 
         $result = $db->query('SELECT id, name, price, is_new, is_recommended, status, availability, code FROM product '
                 . 'WHERE status = "1"'
-                . 'ORDER BY id DESC ');
+                . "ORDER BY id DESC LIMIT $offset, $countList");
 
         $i = 0;
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

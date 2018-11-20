@@ -109,6 +109,14 @@ div#testCarousel{
 		margin: 0 auto;
 	}
 
+	footer div{
+		margin-top: 30px;
+		text-align: center;
+	}
+	footer div:first-child{
+		margin-top: 0;
+	}
+
 	.shop-menu ul li a{
 		padding-left: 0;
 	}
@@ -206,6 +214,18 @@ div#testCarousel{
 		.headContact {
 			top: 0;
 		}
+		
+		footer div{
+			margin-top: 30px;
+			text-align: center;
+		}
+		footer div:first-child{
+			margin-top: 0;
+		}
+		.productinfo img{
+			height:100%;
+			width: auto;
+		  }
 
 	.header div.index-shadow{
 		display: none;
@@ -369,6 +389,13 @@ div#testCarousel{
 
 	div#testCarousel{
 		display: none;
+	}
+	.productinfo img{
+		height: auto;
+		width: 100%;
+	}
+	.productinfo .img{
+		height: auto;
 	}
 
 .contactinfo{

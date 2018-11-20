@@ -2,6 +2,7 @@
 
 return array(
 	'phpShop/product/([0-9]+)' => 'product/view/$1', // actionView в ProductController
+	'phpShop/catalog/page-([0-9]+)' => 'catalog/index/$1',
 	'phpShop/catalog' => 'catalog/index',
 	'phpShop/category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
 	'phpShop/category/([0-9]+)' => 'catalog/category/$1',
