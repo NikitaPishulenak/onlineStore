@@ -189,4 +189,5 @@ $(document).ready(function(){
 		$('div.total_cost').html(total+" руб.");
 	}
 
+
 });

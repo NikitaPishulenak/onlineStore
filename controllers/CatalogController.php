@@ -24,11 +24,10 @@ class CatalogController
     {
         // $categories = array();
         // $categories = Category::getCategoriesList();
-        echo $categoryId;
 
         $catFields = array();
         $catFields = Category::getCatFields($categoryId);
-        print_r($catFields);
+        $fields = array();
 
         $categoryProducts = array();
         $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
@@ -39,6 +38,27 @@ class CatalogController
         $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/catalog/category.php');
+
+        return true;
+    }
+
+    public function actionCategoryFilter($categoryId)
+    {
+
+        $catFields = array();
+        $catFields = Category::getCatFields($categoryId);
+        $fields = array();
+        print_r($_POST);
+
+        // $categoryProducts = array();
+        // $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+
+        // $total = Product::getTotalProductsInCategory($categoryId);
+
+        // // Создаем объект Pagination - постраничная навигация
+        // $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
+
+        // require_once(ROOT . '/views/catalog/category.php');
 
         return true;
     }

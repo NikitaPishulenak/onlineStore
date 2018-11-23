@@ -48,6 +48,11 @@
                                     <ul class="nav navbar-nav collapse navbar-collapse">
                                         <li class="link-hover-solid"><a href="/phpShop">Главная</a></li>
                                         <li class="link-hover-solid"><a href="/phpShop/catalog">Каталог</a></li>
+                                        <!-- <li class="dropdown link-hover-solid"><a href="/phpShop/catalog"> Каталог</a>
+                                                <ul role="menu" class="sub-menu">
+                                                    <li><a href="/phpShop/logout" class="headIcon"><i class="fa fa-unlock headIcon"></i> Выход</a></li> 
+                                                </ul>
+                                            </li> -->
                                         <li class="link-hover-solid"><a href="/phpShop/blog/">Блог</a></li> 
                                         <li class="link-hover-solid"><a href="/phpShop/about/">О магазине</a></li>
                                         <li class="link-hover-solid"><a href="/phpShop/contacts/">Контакты</a></li>
@@ -85,7 +90,7 @@
                             </div>
                             
                             <div class="col-sm-12 ">
-                                <div class="shop-menu pull-left">
+                                <div class="shop-menu pull-left userBlock">
                                     <ul class="nav navbar-nav">                                    
                                         <li><a href="/phpShop/cart"  class="headIcon"><i class="fa fa-shopping-cart headIcon"></i> Корзина</a><i id="cart-count"><?php echo Cart::totalProductInCart(); ?></i></li>
                                         

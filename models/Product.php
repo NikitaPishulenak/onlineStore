@@ -338,4 +338,13 @@ class Product
         return $products;
     }
 
+    public static function getPrice($price)
+    {
+        if($price=='0'){
+            return 'Цену уточняйте';
+        }else{
+            return $price.' руб.';
+        }
+    }
+
 }

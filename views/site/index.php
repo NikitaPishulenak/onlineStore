@@ -109,7 +109,7 @@
                                             <a href="/phpShop/product/<?php echo $product['id'];?>"><img src="<?php echo Product::getImage($product['id']); ?>" alt="" /></a>
                                         </div>
                                         
-                                        <h2><?php echo $product['price'];?> руб.</h2>
+                                        <h2><?php echo Product::getPrice($product['price']);?></h2>
                                         <p>
                                             <a href="/phpShop/product/<?php echo $product['id'];?>">
                                                 <?php echo $product['name'];?>

@@ -188,11 +188,38 @@ class Category
     {
         switch ($type) {
             case '1':
-                return '<input type="text" value="" />';
+                return '<div class="filePrice"><input type="number" placeholder="от" max="20" /><input type="number" placeholder="до" /></div>';
                 break;
-            case '0':
-                return 'Скрыта';
+            case '2':
+                return '<label><input type="checkbox" name="test[]"/>';
                 break;
+            case '3':
+            return '<input type="text" value="" />';
+            break;
         }
     }
+
+    public static function getGroupField($idGroup)
+    {
+        $db = Db::getConnection();
+        $fieldList = array();
+        $result = $db->query('SELECT name, type FROM groupFields WHERE idGroup = '.$idGroup);
+        $i = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $fieldList[$i] = $row;
+            $i++;
+        }
+
+        return $fieldList;
+    }
+
+    public static function getCategoryName($id)
+    {
+        $db = Db::getConnection();
+        $result = $db->query('SELECT name FROM category WHERE id = '.$id);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        return $row['name'];
+    }
+
+
 }
