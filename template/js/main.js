@@ -107,33 +107,15 @@ $(document).ready(function(){
 		$(this).find(".advtImg").css({ 'top': '0', 'opacity': '0.5', 'transition': '.3s ease-in-out' });
     });
 	
-
-	// $('a.loginInp').hover(function(){
-	// 	$("div#history").show();
-	// 	$(".popup-content #content").html('<a href="/phpShop/register"><i class="fa fa-archive"></i> Регистрация</a>');
-	// 	var widHistory=$("div#history").width();
-	// 	$("#history").css("top", Number($(this).offset().top + 25));
-	// 	$("#history").css("left", Number($(this).offset().left - widHistory/2+20));
-	// 	$(document).mouseout(function (e) {
-	// 		// if (!$("#history").is(e.target) && $("#history").has(e.target).length === 0) { // и не по его дочерним элементам
-    //             $("div#history").hide();
-    //         // }
-	// 	});
-
-	// 	// $("input#login").click(function(){
-	// 	// 	var email=$("#history input.email").val();
-	// 	// 	var pwd=$("#history input.password").val();
-	// 	// 	if( (email !="") && (pwd !="") ){
-	// 	// 		console.log("send");
-	// 	// 		$.post("/phpShop/login/"+email+"/"+pwd, {}, function () {
-	// 	// 			// location.reload();
-	// 	// 		});
-	// 	// 	}
-	// 	// 	else{
-	// 	// 		console.log("kjqqq");
-	// 	// 	}
-	// 	// });
-	// });
+	
+	$("a[rel=img_group]").fancybox({
+		'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'titlePosition' 	: 'over',
+		'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+			return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+		}
+	});
 
 	document.addEventListener('keydown', function (e) {
 		if (e.keyCode == 13) {

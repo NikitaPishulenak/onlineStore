@@ -8,22 +8,26 @@
                 <div class="product-details"><!--product-details-->
                     <div class="row">
                         <div class="col-sm-3"><!-- 5 -->
-                            <div class="view-product">
-                                <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
+                            <div class="single-products">
+                                <div class="view-product">
+                                    <div class="photoI"><a rel="img_group" class="s_b_photo" href="<?php echo Product::getImage($product['id']); ?>"><img src="<?php echo Product::getImage($product['id']); ?>"></a></div>
+                                    <!-- <img src="<?php echo Product::getImage($product['id']); ?>" alt="" /> -->
+                                </div>
                             </div>
+                            <?php if ($product['is_new']): ?>
+                            <img src="/phpShop/template/images/home/new.png" class="new" alt="" />
+                            <?php endif; ?>
                         </div>
+
                         <div class="col-sm-9">
                             <div class="product-information"><!--/product-information-->
-                                <?php if ($product['is_new']): ?>
-                                <img src="/phpShop/template/images/product-details/new.jpg" class="newarrival" alt="" />
-                                <?php endif; ?>
+                                
                                 
                                 <h2><?php echo $product['name'];?></h2>
                                 <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
-                                    <span>US $<?php echo $product['price'];?></span>
-                                    <label>Количество:</label>
-                                    <input type="text" value="3" />
+                                    <span><?php echo Product::getPrice($product['price']);?></span>
+
                                     <button type="button" class="btn btn-fefault cart add-to-cart" data-id="<?php echo $product['id'];?>">
                                         <i class="fa fa-shopping-cart"></i>
                                         В корзину

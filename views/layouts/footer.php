@@ -50,5 +50,6 @@
 <script src="/phpShop/template/js/price-range.js"></script>
 <script src="/phpShop/template/js/jquery.prettyPhoto.js"></script>
 <script src="/phpShop/template/js/main.js"></script>
+
 </body>
 </html>

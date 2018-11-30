@@ -5,6 +5,8 @@ return array(
 	'phpShop/catalog/page-([0-9]+)' => 'catalog/index/$1',
 	'phpShop/catalog' => 'catalog/index',
 	'phpShop/category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
+	'phpShop/category/([0-9]+)/filter' => 'catalog/categoryFilter/$1',
+
 	'phpShop/category/([0-9]+)' => 'catalog/category/$1',
 	'phpShop/page-([0-9]+)' => 'site/index/$1',
 	'phpShop/contacts' => 'site/contact',
