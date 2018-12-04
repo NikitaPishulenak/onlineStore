@@ -5,7 +5,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="left-sidebar">
                     <h2>Каталог</h2>
                     <div class="panel-group category-products">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 <div id="testCarousel" class="carousel slide" data-ride="carousel">
 
                     <div class="carousel-inner">

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log("kjl");
     $("span.delProduct").click(function(){
         var id=$(this).attr("data-idProduct");
         var isDel=confirm("Действительно хотите удалить товар #"+id);
@@ -19,6 +20,10 @@ $(document).ready(function(){
                 return;
             });
         }
+    });
+
+    $("div.addOtherField").click(function(){
+        $(this).insertAfter("<h1>sdcsdcsdc</h1>");
     });
     
 });

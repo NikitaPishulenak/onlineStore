@@ -27,9 +27,9 @@
                 </ul>
             <?php endif; ?>
 
-            <div class="col-lg-4">
-                <div class="login-form">
-                    <form action="#" method="post" enctype="multipart/form-data" name="createProduct">
+            <div class="login-form">
+                <form action="#" method="post" enctype="multipart/form-data" name="createProduct">
+                    <div class="col-md-4">
 
                         <p>Название товара</p>
                         <input type="text" name="name" placeholder="" value="">
@@ -96,9 +96,19 @@
 
                         <br/><br/>
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        
+                    </div>
+                    <div class="col-md-4 col-md-offset-1">
+                        <h5>Дополнительные поля</h5>
+                        <div class="otherFields">
+                            <input type="text" class="titleField" placeholder="Название" value="">
+                            <input type="text" class="valueField" placeholder="Значение" value="">
+                        </div>
+                        <div class="addOtherField">еще...</div>
+                    </div>
 
-                        <br/><br/>
+                    <br/><br/>
+                    <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
 
                     </form>
                 </div>
@@ -108,5 +118,5 @@
     </div>
 </section>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

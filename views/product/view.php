@@ -7,19 +7,16 @@
             <div class="col-sm-12 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="row">
-                        <div class="col-sm-3"><!-- 5 -->
-                            <div class="single-products">
-                                <div class="view-product">
-                                    <div class="photoI"><a rel="img_group" class="s_b_photo" href="<?php echo Product::getImage($product['id']); ?>"><img src="<?php echo Product::getImage($product['id']); ?>"></a></div>
+                       <div class="col-sm-6">
+                            <!-- <div class="single-products">
+                                <div class="view-product"> -->
+                                    <div class="photoProduct"><a rel="img_group" class="s_b_photo" href="<?php echo Product::getImage($product['id']); ?>"><img src="<?php echo Product::getImage($product['id']); ?>"></a></div>
                                     <!-- <img src="<?php echo Product::getImage($product['id']); ?>" alt="" /> -->
-                                </div>
-                            </div>
-                            <?php if ($product['is_new']): ?>
-                            <img src="/phpShop/template/images/home/new.png" class="new" alt="" />
-                            <?php endif; ?>
+                                <!-- </div>
+                            </div> -->
                         </div>
 
-                        <div class="col-sm-9">
+                        <div class="col-sm-6">
                             <div class="product-information"><!--/product-information-->
                                 
                                 
