@@ -23,7 +23,14 @@ $(document).ready(function(){
     });
 
     $("div.addOtherField").click(function(){
-        $(this).insertAfter("<h1>sdcsdcsdc</h1>");
+        $("div.otherFields:last").append('<div class="otherFields"><input type="text" class="titleField" placeholder="Название" value="">'+
+        '<input type="text" class="valueField" placeholder="Значение" value=""></div>');
+    });
+
+    $("input.saveProduct").click(function(){
+        $("div.addOtherField").each(function(){
+            console.log("2");
+        });
     });
     
 });

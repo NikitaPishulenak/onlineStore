@@ -29,50 +29,51 @@ class AdminProductController extends AdminBase
     public function actionCreate()
     {
         // Проверка доступа
-        self::checkAdmin();
+        // self::checkAdmin();
 
         // Получаем список категорий для выпадающего списка
-        $categoriesList = Category::getCategoriesListAdmin();
+        // $categoriesList = Category::getCategoriesListAdmin();
 
         // Обработка формы
         if (isset($_POST['submit'])) {
-            // Если форма отправлена
-            // Получаем данные из формы
-            $options['name'] = $_POST['name'];
-            $options['code'] = $_POST['code'];
-            $options['price'] = $_POST['price'];
-            $options['category_id'] = $_POST['category_id'];
-            $options['brand'] = $_POST['brand'];
-            $options['availability'] = $_POST['availability'];
-            $options['description'] = $_POST['description'];
-            $options['is_new'] = $_POST['is_new'];
-            $options['is_recommended'] = $_POST['is_recommended'];
-            $options['status'] = $_POST['status'];
+            echo ";lkn";
+        //     // Если форма отправлена
+        //     // Получаем данные из формы
+        //     $options['name'] = $_POST['name'];
+        //     $options['code'] = $_POST['code'];
+        //     $options['price'] = $_POST['price'];
+        //     $options['category_id'] = $_POST['category_id'];
+        //     $options['brand'] = $_POST['brand'];
+        //     $options['availability'] = $_POST['availability'];
+        //     $options['description'] = $_POST['description'];
+        //     $options['is_new'] = $_POST['is_new'];
+        //     $options['is_recommended'] = $_POST['is_recommended'];
+        //     $options['status'] = $_POST['status'];
 
-            // Флаг ошибок в форме
-            $errors = false;
+        //     // Флаг ошибок в форме
+        //     $errors = false;
 
-            // При необходимости можно валидировать значения нужным образом
-            if (!isset($options['name']) || empty($options['name'])) {
-                $errors[] = 'Заполните поля';
-            }
+        //     // При необходимости можно валидировать значения нужным образом
+        //     if (!isset($options['name']) || empty($options['name'])) {
+        //         $errors[] = 'Заполните поля';
+        //     }
 
-            if ($errors == false) {
+        //     if ($errors == false) {
 
-                $id = Product::createProduct($options);
+        //         $id = Product::createProduct($options);
  
-                // Если запись добавлена
-                if ((isset($id)) && ($id!=0)) {
-                    // Проверим, загружалось ли через форму изображение
-                    if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/phpShop/upload/images/products/{$id}.jpg");
-                    }
-                };
-                ?><script>
-                alert("Товар успешно добавлен!");
-                document.createProduct.reset();
-                </script><?
-            }
+        //         // Если запись добавлена
+        //         if ((isset($id)) && ($id!=0)) {
+        //             // Проверим, загружалось ли через форму изображение
+        //             if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
+        //                 move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/phpShop/upload/images/products/{$id}.jpg");
+        //             }
+        //         };
+        //         ?><script>
+        //         alert("Товар успешно добавлен!");
+        //         document.createProduct.reset();
+        //         </script><?
+        //     }
         }
 
         // Подключаем вид

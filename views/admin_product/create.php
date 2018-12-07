@@ -108,7 +108,7 @@
                     </div>
 
                     <br/><br/>
-                    <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                    <input type="submit" name="submit" class="btn btn-default saveProduct" value="Сохранить">
 
                     </form>
                 </div>
