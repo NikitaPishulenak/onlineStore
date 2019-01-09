@@ -43,13 +43,16 @@
 
 <script src="/phpShop/template/js/jquery.js"></script>
 <script src="/phpShop/template/js/jquery.maskedinput.min.js"></script>
-<script src="/phpShop/template/js/jquery.cycle2.min.js"></script>
-<script src="/phpShop/template/js/jquery.cycle2.carousel.min.js"></script>
+<!-- <script src="/phpShop/template/js/jquery.cycle2.min.js"></script>
+<script src="/phpShop/template/js/jquery.cycle2.carousel.min.js"></script> -->
 <script src="/phpShop/template/js/bootstrap.min.js"></script>
 <script src="/phpShop/template/js/jquery.scrollUp.min.js"></script>
+<script src="/phpShop/template/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script src="/phpShop/template/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <script src="/phpShop/template/js/price-range.js"></script>
 <script src="/phpShop/template/js/jquery.prettyPhoto.js"></script>
 <script src="/phpShop/template/js/main.js"></script>
+	
 
 </body>
 </html>

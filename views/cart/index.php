@@ -84,7 +84,7 @@
                                         <input type="text" name="userName" placeholder="" value="<?php echo $userName; ?>"/>
 
                                         <p>Номер телефона</p>
-                                        <input type="text" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>"/>
+                                        <input type="tel" id="phoneNumbCart" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>"/>
 
                                         <p>Комментарий к заказу</p>
                                         <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>"/>

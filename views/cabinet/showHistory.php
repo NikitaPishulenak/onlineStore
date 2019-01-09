@@ -20,7 +20,7 @@
 
 
             <h5>Информация о заказе &nbsp; 
-            <a class="edtItem" href="/phpShop/cabinet/order/update/<?php echo $order['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a>
+            <!-- <a class="edtItem" href="/phpShop/cabinet/order/update/<?php echo $order['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a> -->
             </h5>
             
             <table class="table-admin-small table-bordered table-striped table">

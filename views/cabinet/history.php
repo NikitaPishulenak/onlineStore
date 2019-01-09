@@ -21,13 +21,13 @@
             <?php endif;?>
 
 
-            <?php foreach ($ordersList as $order):?>
+            <?php foreach ($ordersList as $order): ?>
                 <div class="orderItem">
                     <div class="orderNumber">
                         <strong title="Заказ #<?php echo $order['id']; ?>">#<?php echo $order['id']; ?></strong>
                         <div class="options">
                             <a class="edtItem" href="/phpShop/cabinet/order/view/<?php echo $order['id']; ?>" title="Смотреть"><i class="fa fa-eye"></i></a>
-                            <a class="edtItem" href="/phpShop/cabinet/order/update/<?php echo $order['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a>
+                            <!-- <a class="edtItem" href="/phpShop/cabinet/order/update/<?php echo $order['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a> -->
                             <?php if($order['status']<=2): ?>
                                 <span class="delProduct delItem" data-idOrder="<?php echo $order['id']; ?>" title="Удалить"><i class="fa fa-times"></i></span>
                             <?php endif;?>

@@ -85,9 +85,7 @@ class CabinetController
         $products = Product::getProdustsByIds($productsIds);
 
         if (isset($_POST['submit'])) {
-            $cur_pwd=$_POST['cur_password'];
-            $new_pwd1=$_POST['password1'];
-            $new_pwd2=$_POST['password2'];
+            
 
             // $errors = false;
 
