@@ -21,7 +21,7 @@
                                 
                                 
                                 <h2><?php echo $product['name'];?></h2>
-                                <p>Код товара: <?php echo $product['code'];?></p>
+                                <p>Код товара: <?php echo $product['code']; print_r($product);?></p>
                                 <span>
                                     <span><?php echo Product::getPrice($product['price']);?></span>
 
@@ -30,9 +30,9 @@
                                         В корзину
                                     </button>
                                 </span>
-                                <p><b>Наличие:</b> На складе</p>
+                                <p><b>Бренд:</b> <?php echo $product['brand'];?></p>
+                                <p><b>Наличие:</b> <?php echo Product::getAvaibility($product['availability']);?></p>
                                 <p><b>Состояние:</b> Новое</p>
-                                <p><b>Производитель:</b> D&amp;G</p>
                             </div><!--/product-information-->
                         </div>
                     </div>

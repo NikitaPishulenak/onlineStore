@@ -35,7 +35,7 @@
                                 <div class="single-products">
                                     <div class="productinfo text-center">
                                         <div class="img">
-                                            <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
+                                            <a href="/phpShop/product/<?php echo $product['id'];?>"><img src="<?php echo Product::getImage($product['id']); ?>" alt="" /></a>
                                         </div>
                                         <h2><?php echo  Product::getPrice($product['price']); ?></h2>
                                         <p>

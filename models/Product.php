@@ -347,4 +347,21 @@ class Product
         }
     }
 
+    public static function getAvaibility($avaib)
+    {
+        switch($avaib){
+            case '1':
+                return 'На складе';
+                break;
+
+            case '2':
+                return 'Под заказ';
+                break;
+
+            default:
+                return 'Нет в наличие';
+                break;
+        }
+    }
+
 }
